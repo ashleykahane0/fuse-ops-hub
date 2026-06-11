@@ -924,15 +924,11 @@ function runEtaProcess(){
   if(!etaHSRows.length){toast('Upload Homesource CSV','error');return;}
   const {etaMap, poModelMap} = parseVendorData();
   const modelCount = Object.keys(poModelMap).length + Object.keys(etaMap).length;
-  const modelPOMap = etaVendorData.wb ? buildModelPOMap(etaVendorData.wb) : {};
-  const poMatchCount = Object.keys(modelPOMap).length;
-  if (poMatchCount > 0) toast('Found ' + poMatchCount + ' PO references in vendor report');
   const cols = Object.keys(etaHSRows[0]||{});
-  const modelCol = cols.find(c=>/model/i.test(c))||cols[0];
+  const modelCol  = cols.find(c=>/model/i.test(c)) || cols[0];
+  const poCol     = cols.find(c=>/^po.?num|^po.?numb|^purchase.?order/i.test(c));
+  const custPOCol = cols.find(c=>/customer.?po|customerpo/i.test(c));
   let etaMatched=0, poMatched=0;
-  // Find the Customer PO column in Homesource CSV
-  const hsCols = Object.keys(etaHSRows[0]||{});
-  const custPOCol = hsCols.find(c=>/customer.?po|customerpo/i.test(c));
   const updated = etaHSRows.map(row => {
     const model = cleanModel(row[modelCol]);
     const hsPO = String(row[poCol] || '').trim();
