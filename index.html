@@ -909,18 +909,28 @@ function runEtaProcess(){
   const cols = Object.keys(etaHSRows[0]||{});
   const modelCol = cols.find(c=>/model/i.test(c))||cols[0];
   let etaMatched=0, poMatched=0;
+  // Find the Customer PO column in Homesource CSV
+  const hsCols = Object.keys(etaHSRows[0]||{});
+  const custPOCol = hsCols.find(c=>/customer.?po|customerpo/i.test(c));
   const updated = etaHSRows.map(row => {
     const model = cleanModel(row[modelCol]);
     const vendorETA = etaMap[model];
     const newRow = Object.assign({}, row);
     newRow['UPDATED_ETA'] = vendorETA ? fmtDate(addDays(vendorETA,7)) : '';
     if (vendorETA) etaMatched++;
-    const poInfo = modelPOMap[model];
-    if (poInfo) { newRow['OLD_PO']=poInfo.oldPO; newRow['NEW_PO']=poInfo.newPO; poMatched++; }
-    else {
-      const rowPOs = extractOldPOs(Object.values(row).join(' '));
-      if (rowPOs.length) { const np=poMapping[rowPOs[0]]; newRow['OLD_PO']=rowPOs[0]; newRow['NEW_PO']=np||''; if(np)poMatched++; }
-      else { newRow['OLD_PO']=''; newRow['NEW_PO']=''; }
+    // Translate old PO directly from Homesource Customer PO column
+    const custPO = String(row[custPOCol] || '').trim().toUpperCase();
+    if (custPO && poMapping[custPO]) {
+      newRow['OLD_PO'] = custPO;
+      newRow['NEW_PO'] = poMapping[custPO];
+      poMatched++;
+    } else if (custPO && /^[A-Z]{2}/i.test(custPO)) {
+      // Old-style PO not yet in mapping
+      newRow['OLD_PO'] = custPO;
+      newRow['NEW_PO'] = 'NOT IN MAPPING';
+    } else {
+      newRow['OLD_PO'] = '';
+      newRow['NEW_PO'] = '';
     }
     return newRow;
   });
