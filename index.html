@@ -7,42 +7,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:#1a1208;--surface:#241a0e;--surface2:#2e2114;--surface3:#3a291a;
-  --border:#5c4030;--accent:#c8703a;--accent2:#a85828;
-  --accent-dim:rgba(200,112,58,0.15);--accent-glow:rgba(200,112,58,0.07);
-  --green:#6b9e6b;--green-dim:rgba(107,158,107,0.14);
-  --red:#d95f4b;--red-dim:rgba(217,95,75,0.14);
-  --blue:#6a9eb0;--blue-dim:rgba(106,158,176,0.14);
-  --text:#f0e4d0;--text2:#b89470;--text3:#7a5e48;
-  --mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',sans-serif;--display:'Bebas Neue',sans-serif;
+  --bg:#0d0f14; --surface:#161920; --surface2:#1e2230; --surface3:#252a3a;
+  --border:#2e3448; --accent:#f0a500; --accent2:#e06c00;
+  --accent-dim:rgba(240,165,0,0.12); --accent-glow:rgba(240,165,0,0.06);
+  --green:#22c55e; --green-dim:rgba(34,197,94,0.12);
+  --red:#ef4444; --red-dim:rgba(239,68,68,0.12);
+  --blue:#60a5fa; --blue-dim:rgba(96,165,250,0.12);
+  --text:#e2e8f0; --text2:#94a3b8; --text3:#64748b;
+  --mono:'IBM Plex Mono',monospace; --sans:'IBM Plex Sans',sans-serif;
+  --display:'Bebas Neue',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;font-size:14px}
+/* HEADER */
 .app-header{background:var(--surface);border-bottom:2px solid var(--accent);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
 .app-logo{font-family:var(--display);font-size:30px;letter-spacing:3px;color:var(--accent)}
 .app-logo span{color:var(--text2);font-size:13px;font-family:var(--mono);letter-spacing:1px;margin-left:14px;vertical-align:middle}
 .header-right{display:flex;align-items:center;gap:12px}
-.nav-link{font-family:var(--mono);font-size:11px;color:var(--text3);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:10px;transition:all .2s}
-.nav-link:hover{color:var(--accent);border-color:var(--accent)}
-.sync-indicator{font-family:var(--mono);font-size:10px;color:var(--text3);display:flex;align-items:center;gap:6px}
-.sync-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
-.sync-dot.saving{background:#facc15;animation:pulse .8s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+/* NAV TABS */
 .nav-tabs{background:var(--surface);border-bottom:1px solid var(--border);display:flex;padding:0 28px;gap:0}
 .nav-tab{background:none;border:none;color:var(--text3);font-family:var(--sans);font-size:13px;font-weight:500;padding:14px 22px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;letter-spacing:.5px;transition:all .2s;display:flex;align-items:center;gap:8px}
 .nav-tab:hover{color:var(--text)}
 .nav-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+/* PANELS */
 .panel{display:none;padding:28px;max-width:1400px;margin:0 auto}
 .panel.active{display:block}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px}
+/* CARDS */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:20px;margin-bottom:16px}
 .card-title{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+/* GRID */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+/* FORM ELEMENTS */
 label{font-size:11px;color:var(--text3);font-family:var(--mono);letter-spacing:1px;display:block;margin-bottom:5px;text-transform:uppercase}
-input,select,textarea{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:9px 12px;border-radius:10px;font-family:var(--mono);font-size:13px;width:100%;transition:border .2s;outline:none}
+input,select,textarea{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:9px 12px;border-radius:4px;font-family:var(--mono);font-size:13px;width:100%;transition:border .2s;outline:none}
 input:focus,select:focus,textarea:focus{border-color:var(--accent)}
 select option{background:var(--surface2)}
-.btn{border:none;border-radius:10px;padding:10px 20px;font-family:var(--mono);font-size:12px;font-weight:600;cursor:pointer;letter-spacing:1px;transition:all .15s;display:inline-flex;align-items:center;gap:7px}
-.btn:hover{opacity:.85}
+/* BUTTONS */
+.btn{border:none;border-radius:4px;padding:10px 20px;font-family:var(--mono);font-size:12px;font-weight:600;cursor:pointer;letter-spacing:1px;transition:all .15s;display:inline-flex;align-items:center;gap:7px}
 .btn-primary{background:var(--accent);color:#000}
 .btn-primary:hover{background:var(--accent2)}
 .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text2)}
@@ -53,19 +55,22 @@ select option{background:var(--surface2)}
 .btn-danger:hover{background:var(--red-dim)}
 .btn:disabled{opacity:.4;pointer-events:none}
 .btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
-.upload-zone{border:2px dashed var(--border);border-radius:10px;padding:28px;text-align:center;cursor:pointer;transition:all .2s;background:var(--accent-glow)}
+/* UPLOAD ZONE */
+.upload-zone{border:2px dashed var(--border);border-radius:6px;padding:28px;text-align:center;cursor:pointer;transition:all .2s;background:var(--accent-glow)}
 .upload-zone:hover,.upload-zone.drag-over{border-color:var(--accent);background:var(--accent-dim)}
 .upload-zone .uz-icon{font-size:28px;margin-bottom:8px}
 .upload-zone .uz-label{font-family:var(--mono);font-size:12px;color:var(--text2);margin-bottom:4px}
 .upload-zone .uz-sub{font-size:11px;color:var(--text3)}
 .upload-zone.has-file{border-color:var(--green);background:var(--green-dim)}
 .upload-zone.has-file .uz-label{color:var(--green)}
-.status-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:var(--surface2);border:1px solid var(--border);font-family:var(--mono);font-size:12px}
+/* STATUS */
+.status-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:4px;background:var(--surface2);border:1px solid var(--border);font-family:var(--mono);font-size:12px}
 .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .dot-ok{background:var(--green)}
 .dot-warn{background:#facc15}
 .dot-err{background:var(--red)}
-.tbl-wrap{overflow-x:auto;border-radius:10px;border:1px solid var(--border);max-height:420px;overflow-y:auto}
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:4px;border:1px solid var(--border);max-height:420px;overflow-y:auto}
 table{width:100%;border-collapse:collapse;font-size:12px}
 thead th{background:var(--surface2);color:var(--text3);font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:9px 12px;position:sticky;top:0;z-index:2;white-space:nowrap;border-bottom:1px solid var(--border)}
 tbody tr:hover{background:var(--surface2)}
@@ -74,56 +79,74 @@ tbody td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowr
 .td-na{color:var(--text3)}
 .td-accent{color:var(--accent)}
 .td-green{color:var(--green)}
-.badge{display:inline-block;padding:2px 8px;border-radius:6px;font-family:var(--mono);font-size:10px;font-weight:600}
+/* BADGE */
+.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-family:var(--mono);font-size:10px;font-weight:600}
+.badge-amber{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent)}
+.badge-blue{background:var(--blue-dim);color:var(--blue)}
+.badge-green{background:var(--green-dim);color:var(--green)}
+.badge-red{background:var(--red-dim);color:var(--red)}
+/* TOASTS */
 #toasts{position:fixed;top:70px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:8px}
-.toast{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:12px 18px;border-radius:10px;font-family:var(--mono);font-size:12px;box-shadow:0 4px 20px rgba(0,0,0,.5);animation:slideIn .2s ease;max-width:340px}
+.toast{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:12px 18px;border-radius:5px;font-family:var(--mono);font-size:12px;box-shadow:0 4px 20px rgba(0,0,0,.5);animation:slideIn .2s ease;max-width:340px}
 .toast.success{border-color:var(--green);color:var(--green)}
 .toast.error{border-color:var(--red);color:var(--red)}
 .toast.warning{border-color:#facc15;color:#facc15}
 @keyframes slideIn{from{transform:translateX(30px);opacity:0}to{transform:translateX(0);opacity:1}}
-.rate-pill{display:inline-block;padding:2px 9px;border-radius:6px;font-family:var(--mono);font-size:11px}
+/* SPIFF specific */
+.rate-pill{display:inline-block;padding:2px 9px;border-radius:3px;font-family:var(--mono);font-size:11px}
 .rate-na{background:var(--surface3);color:var(--text3)}
 .rate-val{background:var(--accent-dim);color:var(--accent)}
 .rate-special{background:var(--blue-dim);color:var(--blue)}
 .spiff-total{font-family:var(--display);font-size:22px;color:var(--accent);letter-spacing:1px}
+/* Modal */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
-.modal{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px;width:500px;max-width:95vw;max-height:85vh;overflow-y:auto}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;width:500px;max-width:95vw;max-height:85vh;overflow-y:auto}
 .modal-title{font-family:var(--display);font-size:22px;color:var(--accent);letter-spacing:2px;margin-bottom:18px}
 .form-row{margin-bottom:14px}
-.vendor-card{background:var(--surface3);border:1.5px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:all .2s;text-align:center}
+/* ETA specific */
+.vendor-card{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:14px;cursor:pointer;transition:all .2s;text-align:center}
 .vendor-card:hover{border-color:var(--accent)}
-.vendor-card.selected{border-color:var(--accent);background:var(--accent-dim);outline:2px solid var(--accent)}
-.vendor-card .vc-name{font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:3px;font-weight:600}
-.vendor-card .vc-fmt{font-size:10px;color:var(--text2)}
+.vendor-card.selected{border-color:var(--accent);background:var(--accent-dim)}
+.vendor-card .vc-name{font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:3px}
+.vendor-card .vc-fmt{font-size:10px;color:var(--text3)}
+/* Pricing rules */
 .rule-row{display:grid;grid-template-columns:140px 1fr 100px 80px auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
 .rule-row:last-child{border-bottom:none}
 .expr-input{font-size:12px;padding:6px 10px}
+/* Section label */
 .section-label{font-family:var(--display);font-size:24px;letter-spacing:2px;color:var(--text);margin-bottom:4px}
 .section-sub{font-size:12px;color:var(--text3);margin-bottom:20px;font-family:var(--mono)}
+.divider{border:none;border-top:1px solid var(--border);margin:20px 0}
 </style>
 </head>
 <body>
 <div id="toasts"></div>
+
+<!-- HEADER -->
 <header class="app-header">
   <div class="app-logo">FUSE OPS HUB <span>Pricing · SPIFF · ETA</span></div>
   <div class="header-right">
-    <div class="sync-indicator"><div class="sync-dot" id="syncDot"></div><span id="syncLabel">Synced</span></div>
-    <a href="/" class="nav-link">🏷️ Clearance Tracker</a>
+    <span id="hubVersion" style="font-family:var(--mono);font-size:10px;color:var(--text3)">v2.0.0</span>
   </div>
 </header>
+
+<!-- NAV -->
 <nav class="nav-tabs">
-  <button class="nav-tab active" onclick="switchTab('pricing',this)">💰 Pricing Calc</button>
-  <button class="nav-tab" onclick="switchTab('spiff',this)">💵 SPIFF Calc</button>
-  <button class="nav-tab" onclick="switchTab('eta',this)">📦 ETA Updater</button>
-  <button class="nav-tab" onclick="switchTab('clearance',this)">🏷️ Clearance Tracker</button>
+  <button class="nav-tab active" onclick="switchTab('pricing')">💰 Pricing Calc</button>
+  <button class="nav-tab" onclick="switchTab('spiff')">💵 SPIFF Calc</button>
+  <button class="nav-tab" onclick="switchTab('eta')">📦 ETA Updater</button>
 </nav>
 
-<!-- PRICING TAB -->
+<!-- ═══════════════════════════════════════════════════════
+     TAB 1 — PRICING CALCULATOR
+═══════════════════════════════════════════════════════ -->
 <div id="tab-pricing" class="panel active">
   <div class="section-label">Pricing Calculator</div>
   <div class="section-sub">Upload a vendor pricelist → map columns → apply brand rules → export</div>
+
   <div class="grid-2" style="margin-bottom:16px">
+    <!-- Upload -->
     <div class="card">
       <div class="card-title">① Upload Vendor File</div>
       <div class="upload-zone" id="pricingZone" onclick="document.getElementById('pricingFile').click()" ondragover="dzOver(event,'pricingZone')" ondragleave="dzLeave('pricingZone')" ondrop="dzDrop(event,'pricingFile','pricingZone')">
@@ -134,50 +157,77 @@ tbody td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowr
       <input type="file" id="pricingFile" accept=".csv,.xlsx,.xls" style="display:none" onchange="loadPricingFile(this)">
       <div id="pricingStatus" class="status-bar" style="display:none;margin-top:12px"></div>
     </div>
+
+    <!-- Brand + run -->
     <div class="card">
       <div class="card-title">② Select Brand & Run</div>
-      <div class="form-row"><label>Brand</label><select id="pricingBrand"><option value="">— select brand —</option></select></div>
-      <div class="form-row"><label>Sheet (if Excel)</label><select id="pricingSheet"></select></div>
+      <div class="form-row">
+        <label>Brand</label>
+        <select id="pricingBrand"><option value="">— select brand —</option></select>
+      </div>
+      <div class="form-row">
+        <label>Sheet (if Excel)</label>
+        <select id="pricingSheet"></select>
+      </div>
       <div class="btn-row">
         <button class="btn btn-primary" onclick="runPricingCalc()">⚡ Run Calculations</button>
         <button class="btn btn-outline" onclick="openManageRules()">⚙ Manage Rules</button>
       </div>
     </div>
   </div>
+
+  <!-- Column Mapping -->
   <div class="card" id="colMapCard" style="display:none">
     <div class="card-title">③ Column Mapping</div>
     <div id="colMapGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px"></div>
   </div>
+
+  <!-- Preview -->
   <div class="card" id="pricingPreviewCard" style="display:none">
     <div class="card-title">④ Preview</div>
     <div id="pricingPreview"></div>
     <div class="btn-row" style="margin-top:14px">
-      <button class="btn btn-primary" onclick="exportPricingExcel()">↓ Export Excel</button>
+      <button class="btn btn-primary" id="pricingExportBtn" onclick="exportPricingExcel()">↓ Export Excel</button>
     </div>
   </div>
 </div>
 
-<!-- SPIFF TAB -->
+<!-- ═══════════════════════════════════════════════════════
+     TAB 2 — SPIFF CALCULATOR
+═══════════════════════════════════════════════════════ -->
 <div id="tab-spiff" class="panel">
   <div class="section-label">SPIFF Calculator</div>
   <div class="section-sub">Upload monthly sell-through report → calculate SPIFF by brand → export</div>
+
   <div class="grid-2" style="margin-bottom:16px">
+    <!-- Upload -->
     <div class="card">
-      <div class="card-title">① Upload Sell-Through File</div>
+      <div class="card-title">① Upload Sell-Through CSV</div>
       <div class="upload-zone" id="spiffZone" onclick="document.getElementById('spiffFile').click()" ondragover="dzOver(event,'spiffZone')" ondragleave="dzLeave('spiffZone')" ondrop="dzDrop(event,'spiffFile','spiffZone')">
         <div class="uz-icon">📊</div>
-        <div class="uz-label" id="spiffZoneLabel">Drop CSV or Excel here</div>
+        <div class="uz-label" id="spiffZoneLabel">Drop CSV here</div>
         <div class="uz-sub">Monthly sell-through export</div>
       </div>
       <input type="file" id="spiffFile" accept=".csv,.xlsx,.xls" style="display:none" onchange="loadSpiffFile(this)">
       <div id="spiffStatus" class="status-bar" style="display:none;margin-top:12px"></div>
     </div>
+
+    <!-- Summary -->
     <div class="card">
       <div class="card-title">② Period Summary</div>
-      <div style="margin-bottom:12px"><label>Period</label><input type="text" id="spiffPeriod" placeholder="Auto-detected from filename"></div>
+      <div style="margin-bottom:12px">
+        <label>Period</label>
+        <input type="text" id="spiffPeriod" placeholder="Auto-detected from filename" style="background:var(--surface3)">
+      </div>
       <div style="display:flex;gap:20px;margin-bottom:14px">
-        <div><div style="font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px">TOTAL SPIFF</div><div class="spiff-total" id="spiffGrandTotal">$0.00</div></div>
-        <div><div style="font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px">ROWS PROCESSED</div><div class="spiff-total" id="spiffRowCount">0</div></div>
+        <div>
+          <div style="font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px">TOTAL SPIFF</div>
+          <div class="spiff-total" id="spiffGrandTotal">$0.00</div>
+        </div>
+        <div>
+          <div style="font-size:10px;color:var(--text3);font-family:var(--mono);margin-bottom:3px">ROWS PROCESSED</div>
+          <div class="spiff-total" id="spiffRowCount">0</div>
+        </div>
       </div>
       <div class="btn-row">
         <button class="btn btn-primary" onclick="runSpiffCalc()">⚡ Calculate SPIFF</button>
@@ -186,47 +236,25 @@ tbody td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowr
       </div>
     </div>
   </div>
+
+  <!-- Results -->
   <div class="card" id="spiffResultCard" style="display:none">
     <div class="card-title">Results by Brand</div>
     <div class="tbl-wrap"><table id="spiffResultTable"></table></div>
   </div>
+
   <div class="card" id="spiffDetailCard" style="display:none">
     <div class="card-title">Line-Item Detail</div>
     <div class="tbl-wrap" style="max-height:360px"><table id="spiffDetailTable"></table></div>
   </div>
 </div>
 
-<!-- ETA TAB -->
+<!-- ═══════════════════════════════════════════════════════
+     TAB 3 — ETA UPDATER
+═══════════════════════════════════════════════════════ -->
 <div id="tab-eta" class="panel">
   <div class="section-label">ETA Updater</div>
   <div class="section-sub">Parse vendor open-order reports → match to Homesource CSV → export with ETAs (+7 days)</div>
-
-  <!-- PO MAPPING CARD -->
-  <div class="card">
-    <div class="card-title">🔄 PO Number Mapping <span id="poMapBadge" style="font-family:var(--mono);font-size:10px;color:var(--text3);margin-left:8px;font-weight:400;text-transform:none;letter-spacing:0;">Loading…</span></div>
-    <div style="font-size:12px;color:var(--text3);margin-bottom:12px;">
-      Upload your <strong style="color:var(--text2)">PurchaseOrderExport.xlsx</strong> to map old PO numbers (FT/PR-style) to new ERP PO numbers. Saved to the server — upload once, shared with the whole team.
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
-      <div>
-        <div class="upload-zone" id="poMapZone" onclick="document.getElementById('poMapFile').click()" ondragover="dzOver(event,'poMapZone')" ondragleave="dzLeave('poMapZone')" ondrop="dzDrop(event,'poMapFile','poMapZone')">
-          <div class="uz-icon">🗂️</div>
-          <div class="uz-label" id="poMapZoneLabel">Drop PurchaseOrderExport.xlsx here</div>
-          <div class="uz-sub">Reads the "Source" sheet — old PO in CustomerPO column</div>
-        </div>
-        <input type="file" id="poMapFile" accept=".xlsx,.xls" style="display:none" onchange="loadPOMapFile(this)">
-        <div id="poMapStatus" class="status-bar" style="display:none;margin-top:10px"></div>
-      </div>
-      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px">
-        <div style="font-size:10px;color:var(--text3);font-family:var(--mono);letter-spacing:1px;margin-bottom:10px;text-transform:uppercase">Quick Lookup</div>
-        <div style="display:flex;gap:8px;margin-bottom:10px">
-          <input type="text" id="poLookupInput" placeholder="Enter old PO (e.g. FT56957)…" style="flex:1" onkeydown="if(event.key==='Enter')lookupPO()">
-          <button class="btn btn-outline" onclick="lookupPO()" style="padding:8px 14px">→</button>
-        </div>
-        <div id="poLookupResult" style="font-family:var(--mono);font-size:12px;color:var(--text3)">Type a PO number and press Enter</div>
-      </div>
-    </div>
-  </div>
 
   <div class="card">
     <div class="card-title">① Select Vendor</div>
@@ -236,7 +264,9 @@ tbody td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowr
       <input type="number" id="maWeeks" value="4" min="0" max="52">
     </div>
   </div>
+
   <div class="grid-2">
+    <!-- Vendor report upload -->
     <div class="card">
       <div class="card-title">② Upload Vendor Report</div>
       <div class="upload-zone" id="etaVendorZone" onclick="document.getElementById('etaVendorFile').click()" ondragover="dzOver(event,'etaVendorZone')" ondragleave="dzLeave('etaVendorZone')" ondrop="dzDrop(event,'etaVendorFile','etaVendorZone')">
@@ -247,6 +277,8 @@ tbody td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowr
       <input type="file" id="etaVendorFile" style="display:none" onchange="loadEtaVendorFile(this)">
       <div id="etaVendorStatus" class="status-bar" style="display:none;margin-top:12px"></div>
     </div>
+
+    <!-- Homesource upload -->
     <div class="card">
       <div class="card-title">③ Upload Homesource CSV</div>
       <div class="upload-zone" id="etaHSZone" onclick="document.getElementById('etaHSFile').click()" ondragover="dzOver(event,'etaHSZone')" ondragleave="dzLeave('etaHSZone')" ondrop="dzDrop(event,'etaHSFile','etaHSZone')">
@@ -258,32 +290,35 @@ tbody td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowr
       <div id="etaHSStatus" class="status-bar" style="display:none;margin-top:12px"></div>
     </div>
   </div>
+
   <div class="card">
     <div class="card-title">④ Process & Export</div>
     <div id="etaMatchStatus" class="status-bar" style="display:none;margin-bottom:14px"></div>
-    <div class="btn-row"><button class="btn btn-primary" onclick="runEtaProcess()">⚡ Process ETAs</button></div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="runEtaProcess()">⚡ Process ETAs</button>
+    </div>
     <div id="etaExportLinks" style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap"></div>
   </div>
 </div>
 
-<!-- CLEARANCE TAB -->
-<div id="tab-clearance" class="panel" style="padding:0">
-  <iframe id="clearanceFrame" src="clearance.html" style="width:100%;height:calc(100vh - 112px);border:none;display:block;" title="Clearance Tracker"></iframe>
-</div>
-
-<!-- MODALS -->
+<!-- ══════════════════════════════════
+     MODALS
+══════════════════════════════════ -->
+<!-- Manage Pricing Rules Modal -->
 <div class="modal-overlay" id="rulesModal">
   <div class="modal" style="width:700px">
     <div class="modal-title">Pricing Rules</div>
-    <div style="margin-bottom:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-      <select id="rulesModalBrand" onchange="loadRuleEditor()" style="width:200px"><option value="">— select brand —</option></select>
+    <div style="margin-bottom:14px;display:flex;gap:10px;align-items:center">
+      <select id="rulesModalBrand" onchange="loadRuleEditor()" style="width:200px">
+        <option value="">— select brand —</option>
+      </select>
       <button class="btn btn-outline" onclick="addNewRuleBrand()">+ New Brand</button>
       <button class="btn btn-outline" onclick="exportRulesJSON()">↓ Export JSON</button>
       <button class="btn btn-outline" onclick="document.getElementById('importRulesFile').click()">↑ Import JSON</button>
       <input type="file" id="importRulesFile" accept=".json" style="display:none" onchange="importRulesJSON(this)">
     </div>
     <div id="ruleEditorArea" style="display:none">
-      <p style="font-size:11px;color:var(--text3);font-family:var(--mono);margin-bottom:12px">Variables: msrp, map, umrp, cost, l1, l2, l3, l4, ssp, dealer, invoice, retail, list. Arithmetic: + - * / ()</p>
+      <p style="font-size:11px;color:var(--text3);font-family:var(--mono);margin-bottom:12px">Use variables: msrp, map, umrp, cost, l1, l2, l3, l4, ssp, dealer, invoice, retail, list. Arithmetic: + - * / ()</p>
       <div class="rule-row" style="font-family:var(--mono);font-size:10px;color:var(--text3);font-weight:600;border-bottom:1px solid var(--border)">
         <div>FIELD</div><div>FORMULA</div><div>FIXED VALUE</div><div>SPIFF %</div><div></div>
       </div>
@@ -293,10 +328,13 @@ tbody td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowr
         <button class="btn btn-danger" onclick="deleteRuleBrand()">Delete Brand</button>
       </div>
     </div>
-    <div style="margin-top:20px;text-align:right"><button class="btn btn-ghost" onclick="closeModal('rulesModal')">Close</button></div>
+    <div style="margin-top:20px;text-align:right">
+      <button class="btn btn-ghost" onclick="closeModal('rulesModal')">Close</button>
+    </div>
   </div>
 </div>
 
+<!-- SPIFF Brand Rates Modal -->
 <div class="modal-overlay" id="spiffBrandsModal">
   <div class="modal" style="width:720px">
     <div class="modal-title">Brand SPIFF Rates</div>
@@ -305,11 +343,16 @@ tbody td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowr
       <button class="btn btn-outline" onclick="openAddSpiffBrand()">+ Add Brand</button>
       <button class="btn btn-ghost" onclick="resetSpiffBrands()">↺ Reset Defaults</button>
     </div>
-    <div class="tbl-wrap" style="max-height:50vh"><table id="spiffBrandTable"></table></div>
-    <div style="margin-top:16px;text-align:right"><button class="btn btn-ghost" onclick="closeModal('spiffBrandsModal')">Close</button></div>
+    <div class="tbl-wrap" style="max-height:50vh">
+      <table id="spiffBrandTable"></table>
+    </div>
+    <div style="margin-top:16px;text-align:right">
+      <button class="btn btn-ghost" onclick="closeModal('spiffBrandsModal')">Close</button>
+    </div>
   </div>
 </div>
 
+<!-- Add/Edit SPIFF Brand Modal -->
 <div class="modal-overlay" id="spiffEditModal">
   <div class="modal">
     <div class="modal-title" id="spiffEditTitle">Add Brand</div>
@@ -324,66 +367,106 @@ tbody td{padding:8px 12px;border-bottom:1px solid var(--border);white-space:nowr
   </div>
 </div>
 
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
-// ─── Storage (localStorage) ───────────────────────────────────────────────────
-const LS_PRICING = 'fuseHub_pricingRules';
-const LS_SPIFF   = 'fuseHub_spiffBrands';
-const LS_PO      = 'fuseHub_poMapping';
-
-function lsGet(key, def) { try { return JSON.parse(localStorage.getItem(key)) || def; } catch { return def; } }
-function lsSet(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
-
-function setSaving() { document.getElementById('syncDot').className='sync-dot saving'; document.getElementById('syncLabel').textContent='Saving…'; }
-function setSynced() { document.getElementById('syncDot').className='sync-dot'; document.getElementById('syncLabel').textContent='Synced'; }
-
-// ─── Shared utils ─────────────────────────────────────────────────────────────
-function switchTab(name, btn) {
+// ══════════════════════════════════════════════════════════
+// SHARED UTILITIES
+// ══════════════════════════════════════════════════════════
+function switchTab(name) {
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
-  if (btn) btn.classList.add('active');
+  event.target.classList.add('active');
 }
+
 function toast(msg, type='success') {
-  const el=document.createElement('div'); el.className='toast '+type; el.textContent=msg;
-  document.getElementById('toasts').appendChild(el); setTimeout(()=>el.remove(),3500);
+  const el=document.createElement('div');
+  el.className='toast '+type;
+  el.textContent=msg;
+  document.getElementById('toasts').appendChild(el);
+  setTimeout(()=>el.remove(), 3500);
 }
+
 function openModal(id){document.getElementById(id).classList.add('open')}
 function closeModal(id){document.getElementById(id).classList.remove('open')}
+
 function dzOver(e,id){e.preventDefault();document.getElementById(id).classList.add('drag-over')}
 function dzLeave(id){document.getElementById(id).classList.remove('drag-over')}
 function dzDrop(e,inputId,zoneId){
   e.preventDefault();dzLeave(zoneId);
-  const files=e.dataTransfer.files; if(!files[0])return;
+  const files=e.dataTransfer.files;
+  if(!files[0])return;
   const dt=new DataTransfer();dt.items.add(files[0]);
   const inp=document.getElementById(inputId);inp.files=dt.files;
   inp.dispatchEvent(new Event('change'));
 }
+
 function setZoneFile(zoneId,labelId,filename){
   document.getElementById(zoneId).classList.add('has-file');
   document.getElementById(labelId).textContent='✓ '+filename;
 }
+
 function fmt$(v){
   if(v===null||v===undefined||v==='')return '<span class="td-na">—</span>';
   if(typeof v==='number')return '<span class="td-calc">$'+v.toFixed(2)+'</span>';
   return '<span>'+v+'</span>';
 }
-function fmtPct(v){if(v===null||v===undefined)return '<span class="td-na">—</span>';return '<span class="td-calc">'+(v*100).toFixed(1)+'%</span>';}
-function fmtDate(d){if(!d||isNaN(d.getTime()))return '—';return (d.getMonth()+1)+'/'+(d.getDate())+'/'+d.getFullYear();}
+
+function fmtPct(v){
+  if(v===null||v===undefined)return '<span class="td-na">—</span>';
+  return '<span class="td-calc">'+(v*100).toFixed(1)+'%</span>';
+}
+
+function fmtDate(d){
+  if(!d||isNaN(d.getTime()))return '—';
+  return (d.getMonth()+1)+'/'+(d.getDate())+'/'+d.getFullYear();
+}
+
 function addDays(d,n){const r=new Date(d);r.setDate(r.getDate()+n);return r;}
-function readFileText(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=e=>res(e.target.result);r.onerror=()=>rej(new Error('Read failed'));r.readAsText(file);})}
-function readFileArrayBuffer(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=e=>res(e.target.result);r.onerror=()=>rej(new Error('Read failed'));r.readAsArrayBuffer(file);})}
+
+function readFileBytes(file){
+  return new Promise((res,rej)=>{
+    const r=new FileReader();
+    r.onload=e=>res(e.target.result);
+    r.onerror=()=>rej(new Error('Read failed'));
+    r.readAsBinaryString(file);
+  });
+}
+
+function readFileText(file){
+  return new Promise((res,rej)=>{
+    const r=new FileReader();
+    r.onload=e=>res(e.target.result);
+    r.onerror=()=>rej(new Error('Read failed'));
+    r.readAsText(file);
+  });
+}
+
+function readFileArrayBuffer(file){
+  return new Promise((res,rej)=>{
+    const r=new FileReader();
+    r.onload=e=>res(e.target.result);
+    r.onerror=()=>rej(new Error('Read failed'));
+    r.readAsArrayBuffer(file);
+  });
+}
+
 function parseCSV(text){
-  const lines=text.split(/\r?\n/);if(!lines.length)return[];
-  const headers=splitCSVRow(lines[0]);const rows=[];
+  const lines=text.split(/\r?\n/);
+  if(!lines.length)return[];
+  const headers=splitCSVRow(lines[0]);
+  const rows=[];
   for(let i=1;i<lines.length;i++){
     if(!lines[i].trim())continue;
-    const vals=splitCSVRow(lines[i]);const row={};
+    const vals=splitCSVRow(lines[i]);
+    const row={};
     headers.forEach((h,j)=>row[h.trim()]=vals[j]!==undefined?vals[j].trim():'');
     rows.push(row);
   }
   return rows;
 }
+
 function splitCSVRow(line){
   const result=[];let cur='';let inQ=false;
   for(let i=0;i<line.length;i++){
@@ -392,13 +475,16 @@ function splitCSVRow(line){
     else if(c===','&&!inQ){result.push(cur);cur='';}
     else cur+=c;
   }
-  result.push(cur);return result;
+  result.push(cur);
+  return result;
 }
+
 function downloadBlob(filename,content,type){
   const a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob([content],{type}));
   a.download=filename;a.click();
 }
+
 function xlsxToRows(wb,sheetName){
   const ws=wb.Sheets[sheetName||wb.SheetNames[0]];
   return XLSX.utils.sheet_to_json(ws,{defval:'',raw:false});
@@ -407,24 +493,22 @@ function xlsxToRows(wb,sheetName){
 // ══════════════════════════════════════════════════════════
 // PRICING CALCULATOR
 // ══════════════════════════════════════════════════════════
-let pricingRules={},pricingRawRows=[],pricingColMap={},pricingCalcRows=[],pricingWB=null;
+let pricingRawRows=[],pricingColMap={},pricingCalcRows=[],pricingWB=null;
 const PRICING_FIELDS=['sku','desc','msrp','map','umrp','cost','ssp','retail','list','dealer','invoice','elite','premier','builder'];
 const PRICING_CALC_FIELDS=['_MAP_UMRP','_L1','_L2','_L3','_L4','_COST','_L3_COST','_SPIFF','_SPIFF_AMT'];
 const PRICING_LABELS={_MAP_UMRP:'MAP/UMRP',_L1:'L1',_L2:'L2',_L3:'L3',_L4:'L4',_COST:'Cost',_L3_COST:'L3 Cost',_SPIFF:'SPIFF %',_SPIFF_AMT:'SPIFF $'};
-const RULE_FIELDS_DEF=[
-  {key:'map_umrp',label:'MAP/UMRP'},{key:'l1',label:'L1'},{key:'l2',label:'L2'},
-  {key:'l3',label:'L3'},{key:'l4',label:'L4'},{key:'cost',label:'Cost'},
-  {key:'l3_cost',label:'L3 Cost'},{key:'pref_cost',label:'Pref Cost'},
-];
 
-function savePricingRules() {
-  lsSet(LS_PRICING, pricingRules); setSynced();
+function loadPricingRules(){
+  try{return JSON.parse(localStorage.getItem('fuseHub_pricingRules')||'{}')}catch{return {}}
 }
+function savePricingRules(r){localStorage.setItem('fuseHub_pricingRules',JSON.stringify(r))}
 
-function refreshPricingBrandSelects() {
-  const brands = Object.keys(pricingRules).sort();
+function refreshPricingBrandSelects(){
+  const rules=loadPricingRules();
+  const brands=Object.keys(rules).sort();
   ['pricingBrand','rulesModalBrand'].forEach(id=>{
-    const sel=document.getElementById(id); if(!sel)return;
+    const sel=document.getElementById(id);
+    if(!sel)return;
     const cur=sel.value;
     sel.innerHTML='<option value="">— select brand —</option>';
     brands.forEach(b=>{const o=document.createElement('option');o.value=b;o.textContent=b;sel.appendChild(o);});
@@ -439,35 +523,52 @@ async function loadPricingFile(inp){
   try{
     if(ext==='csv'){
       const text=await readFileText(file);
-      pricingRawRows=parseCSV(text);pricingWB=null;
+      pricingRawRows=parseCSV(text);
+      pricingWB=null;
       document.getElementById('pricingSheet').innerHTML='<option>N/A (CSV)</option>';
     } else {
       const buf=await readFileArrayBuffer(file);
       pricingWB=XLSX.read(buf,{type:'array'});
-      const sheetSel=document.getElementById('pricingSheet');sheetSel.innerHTML='';
+      const sheetSel=document.getElementById('pricingSheet');
+      sheetSel.innerHTML='';
       pricingWB.SheetNames.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;sheetSel.appendChild(o);});
       pricingRawRows=xlsxToRows(pricingWB);
     }
     showColMap(pricingRawRows[0]||{});
-    const el=document.getElementById('pricingStatus');el.style.display='flex';
-    el.innerHTML='<div class="dot dot-ok"></div><span>'+pricingRawRows.length+' rows · '+Object.keys(pricingRawRows[0]||{}).length+' columns</span>';
+    const el=document.getElementById('pricingStatus');
+    el.style.display='flex';
+    el.innerHTML='<div class="dot dot-ok"></div><span>'+pricingRawRows.length+' rows loaded · '+Object.keys(pricingRawRows[0]||{}).length+' columns detected</span>';
     toast('Loaded '+pricingRawRows.length+' rows');
   }catch(e){toast('Load error: '+e.message,'error');}
 }
-document.getElementById('pricingSheet').addEventListener('change',function(){
+
+document.getElementById('pricingSheet')&&document.getElementById('pricingSheet').addEventListener('change',function(){
   if(pricingWB){pricingRawRows=xlsxToRows(pricingWB,this.value);showColMap(pricingRawRows[0]||{});}
 });
+
 function showColMap(sampleRow){
-  const cols=Object.keys(sampleRow);const grid=document.getElementById('colMapGrid');grid.innerHTML='';
+  const cols=Object.keys(sampleRow);
+  const grid=document.getElementById('colMapGrid');
+  grid.innerHTML='';
   PRICING_FIELDS.forEach(field=>{
     const div=document.createElement('div');
+    const lbl=field.toUpperCase();
     let guess=cols.find(c=>c.toLowerCase()===field)||cols.find(c=>c.toLowerCase().includes(field))||'';
-    div.innerHTML='<label>'+field.toUpperCase()+'</label><select id="colmap-'+field+'"><option value="">— none —</option>'+cols.map(c=>'<option value="'+c+'"'+(c===guess?' selected':'')+'>'+c+'</option>').join('')+'</select>';
-    grid.appendChild(div);pricingColMap[field]=guess;
+    div.innerHTML='<label>'+lbl+'</label><select id="colmap-'+field+'"><option value="">— none —</option>'+cols.map(c=>'<option value="'+c+'"'+(c===guess?' selected':'')+'>'+c+'</option>').join('')+'</select>';
+    grid.appendChild(div);
+    pricingColMap[field]=guess;
   });
   document.getElementById('colMapCard').style.display='block';
 }
-function getColMap(){PRICING_FIELDS.forEach(f=>{const el=document.getElementById('colmap-'+f);if(el)pricingColMap[f]=el.value;});return pricingColMap;}
+
+function getColMap(){
+  PRICING_FIELDS.forEach(f=>{
+    const el=document.getElementById('colmap-'+f);
+    if(el)pricingColMap[f]=el.value;
+  });
+  return pricingColMap;
+}
+
 function resolveExpr(expr,ns){
   if(!expr||typeof expr!=='string')return null;
   const e=expr.trim().toLowerCase();
@@ -475,15 +576,24 @@ function resolveExpr(expr,ns){
   try{
     const fn=new Function(...Object.keys(ns),'"use strict";return ('+e+');');
     const res=fn(...Object.values(ns));
-    if(typeof res==='number'&&isFinite(res))return res;return null;
+    if(typeof res==='number'&&isFinite(res))return res;
+    return null;
   }catch{return null;}
 }
+
 function calcPricingRow(row,brandRule,colMap){
-  const out={};const ns={};
+  const out={};
+  // Build namespace from row values
+  const ns={};
   Object.entries(colMap).forEach(([field,col])=>{
-    if(col&&row[col]!==undefined){const v=parseFloat(String(row[col]).replace(/[$,]/g,''));if(!isNaN(v))ns[field]=v;}
+    if(col&&row[col]!==undefined){
+      const v=parseFloat(String(row[col]).replace(/[$,]/g,''));
+      if(!isNaN(v))ns[field]=v;
+    }
   });
+  // Also seed from already-calculated
   const calc=(expr)=>resolveExpr(expr,ns);
+
   out['_MAP_UMRP']=calc(brandRule.map_umrp)||ns.map||ns.umrp||null;
   out['_L1']=calc(brandRule.l1);if(out['_L1']!=null)ns.l1=out['_L1'];
   out['_L2']=calc(brandRule.l2);if(out['_L2']!=null)ns.l2=out['_L2'];
@@ -495,108 +605,158 @@ function calcPricingRow(row,brandRule,colMap){
   out['_SPIFF_AMT']=(out['_SPIFF']!=null&&out['_COST']!=null)?out['_SPIFF']*out['_COST']:null;
   return Object.assign({},row,out);
 }
+
 function runPricingCalc(){
   const brand=document.getElementById('pricingBrand').value;
   if(!brand){toast('Select a brand first','error');return;}
   if(!pricingRawRows.length){toast('No file loaded','error');return;}
-  const brandRule=pricingRules[brand];
+  const rules=loadPricingRules();
+  const brandRule=rules[brand];
   if(!brandRule){toast('No rules found for '+brand,'error');return;}
   getColMap();
   pricingCalcRows=pricingRawRows.map(r=>calcPricingRow(r,brandRule,pricingColMap));
-  toast('Calculated '+pricingCalcRows.length+' rows');
+  const calced=pricingCalcRows.filter(r=>PRICING_CALC_FIELDS.some(f=>r[f]!=null)).length;
+  toast('Calculated '+pricingCalcRows.length+' rows ('+calced+' with results)');
   renderPricingPreview();
   document.getElementById('pricingPreviewCard').style.display='block';
 }
+
 function renderPricingPreview(){
   const skuCol=pricingColMap.sku,descCol=pricingColMap.desc;
   const sample=pricingCalcRows.slice(0,100);
-  const ths='<tr>'+(skuCol?'<th>SKU</th>':'')+(descCol?'<th>Description</th>':'')+PRICING_CALC_FIELDS.map(f=>'<th>'+PRICING_LABELS[f]+'</th>').join('')+'</tr>';
+  const ths='<tr>'+(skuCol?'<th>SKU</th>':'')+(descCol?'<th>Description</th>':'')+
+    PRICING_CALC_FIELDS.map(f=>'<th>'+PRICING_LABELS[f]+'</th>').join('')+'</tr>';
   const trs=sample.map(row=>{
     let td='<tr>';
     if(skuCol)td+='<td>'+((row[skuCol])||'')+'</td>';
     if(descCol)td+='<td style="max-width:200px;overflow:hidden;text-overflow:ellipsis">'+((row[descCol])||'')+'</td>';
-    PRICING_CALC_FIELDS.forEach(f=>{td+=f==='_SPIFF'?'<td>'+fmtPct(row[f])+'</td>':'<td>'+fmt$(row[f])+'</td>';});
+    PRICING_CALC_FIELDS.forEach(f=>{
+      if(f==='_SPIFF')td+='<td>'+fmtPct(row[f])+'</td>';
+      else td+='<td>'+fmt$(row[f])+'</td>';
+    });
     td+='</tr>';return td;
   }).join('');
   document.getElementById('pricingPreview').innerHTML=
     '<div style="font-size:11px;color:var(--text3);font-family:var(--mono);margin-bottom:8px">Preview — first '+sample.length+' of '+pricingCalcRows.length+' rows · <span style="color:var(--blue)">blue = calculated</span></div>'+
     '<div class="tbl-wrap"><table><thead>'+ths+'</thead><tbody>'+trs+'</tbody></table></div>';
 }
+
 function exportPricingExcel(){
   if(!pricingCalcRows.length){toast('Nothing to export','error');return;}
   const brand=document.getElementById('pricingBrand').value||'pricing';
   const date=new Date().toISOString().slice(0,10);
   const skuCol=pricingColMap.sku,descCol=pricingColMap.desc;
+  const exportCols={};
   const calcLabels={_MAP_UMRP:'MAP_UMRP',_L1:'L1',_L2:'L2',_L3:'L3',_L4:'L4',_COST:'COST',_L3_COST:'L3_COST',_SPIFF:'SPIFF_RATE',_SPIFF_AMT:'SPIFF_AMOUNT'};
   const rows=pricingCalcRows.map(row=>{
     const out={};
     if(skuCol)out['SKU']=row[skuCol]||'';
     if(descCol)out['DESCRIPTION']=row[descCol]||'';
-    PRICING_CALC_FIELDS.forEach(k=>{const lbl=calcLabels[k];out[lbl]=k==='_SPIFF'?(row[k]!=null?row[k]:''):(row[k]!=null?Math.round(row[k]*100)/100:'');});
+    PRICING_CALC_FIELDS.forEach(k=>{
+      const lbl=calcLabels[k];
+      out[lbl]=k==='_SPIFF'?(row[k]!=null?row[k]:''):(row[k]!=null?Math.round(row[k]*100)/100:'');
+    });
     return out;
   });
-  const ws=XLSX.utils.json_to_sheet(rows);const wb=XLSX.utils.book_new();
+  const ws=XLSX.utils.json_to_sheet(rows);
+  const wb=XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb,ws,brand.substring(0,31));
   XLSX.writeFile(wb,brand+'_priced_'+date+'.xlsx');
   toast('Exported '+pricingCalcRows.length+' rows');
 }
 
-// Rules modal
+// Manage Rules Modal
 function openManageRules(){refreshPricingBrandSelects();openModal('rulesModal')}
+
+const RULE_FIELDS_DEF=[
+  {key:'map_umrp',label:'MAP/UMRP'},
+  {key:'l1',label:'L1'},
+  {key:'l2',label:'L2'},
+  {key:'l3',label:'L3'},
+  {key:'l4',label:'L4'},
+  {key:'cost',label:'Cost'},
+  {key:'l3_cost',label:'L3 Cost'},
+  {key:'pref_cost',label:'Pref Cost'},
+];
+
 function loadRuleEditor(){
   const brand=document.getElementById('rulesModalBrand').value;
   if(!brand){document.getElementById('ruleEditorArea').style.display='none';return;}
-  const br=pricingRules[brand]||{};
-  const container=document.getElementById('ruleRows');container.innerHTML='';
+  const rules=loadPricingRules();
+  const br=rules[brand]||{};
+  const area=document.getElementById('ruleEditorArea');
+  const container=document.getElementById('ruleRows');
+  container.innerHTML='';
   RULE_FIELDS_DEF.forEach(fd=>{
-    const row=document.createElement('div');row.className='rule-row';
+    const val=br[fd.key]||'';
+    const row=document.createElement('div');
+    row.className='rule-row';
     row.innerHTML='<div style="font-family:var(--mono);font-size:12px;color:var(--text2)">'+fd.label+'</div>'+
-      '<input class="expr-input" id="rule-'+fd.key+'" value="'+(br[fd.key]||'')+'" placeholder="e.g. msrp * 0.85">'+
+      '<input class="expr-input" id="rule-'+fd.key+'" value="'+val+'" placeholder="e.g. msrp * 0.85">'+
       '<div></div><div></div><div></div>';
     container.appendChild(row);
   });
-  const spiffRow=document.createElement('div');spiffRow.className='rule-row';
-  spiffRow.innerHTML='<div style="font-family:var(--mono);font-size:12px;color:var(--text2)">SPIFF Rate</div><div></div><div></div>'+
-    '<input class="expr-input" id="rule-spiff_rate" type="number" step="0.001" value="'+(br.spiff_rate!=null?br.spiff_rate:'')+'" placeholder="0.03"><div></div>';
+  // Spiff rate row
+  const spiffRow=document.createElement('div');
+  spiffRow.className='rule-row';
+  spiffRow.innerHTML='<div style="font-family:var(--mono);font-size:12px;color:var(--text2)">SPIFF Rate</div>'+
+    '<div></div><div></div>'+
+    '<input class="expr-input" id="rule-spiff_rate" type="number" step="0.001" value="'+(br.spiff_rate!=null?br.spiff_rate:'')+'" placeholder="0.03">'+
+    '<div></div>';
   container.appendChild(spiffRow);
-  document.getElementById('ruleEditorArea').style.display='block';
+  area.style.display='block';
 }
+
 function addNewRuleBrand(){
-  const code=prompt('Brand code (e.g. LG, WHR):');if(!code)return;
-  pricingRules[code.toUpperCase()]={};
-  savePricingRules();
+  const code=prompt('Brand code (e.g. LG, WHR):');
+  if(!code)return;
+  const rules=loadPricingRules();
+  if(!rules[code.toUpperCase()])rules[code.toUpperCase()]={};
+  savePricingRules(rules);
   refreshPricingBrandSelects();
   document.getElementById('rulesModalBrand').value=code.toUpperCase();
   loadRuleEditor();
 }
+
 function saveRules(){
-  const brand=document.getElementById('rulesModalBrand').value;if(!brand)return;
+  const brand=document.getElementById('rulesModalBrand').value;
+  if(!brand)return;
+  const rules=loadPricingRules();
   const br={};
   RULE_FIELDS_DEF.forEach(fd=>{const v=document.getElementById('rule-'+fd.key).value.trim();if(v)br[fd.key]=v;});
-  const sr=document.getElementById('rule-spiff_rate').value.trim();if(sr)br.spiff_rate=parseFloat(sr);
-  pricingRules[brand]=br;
-  savePricingRules();
+  const sr=document.getElementById('rule-spiff_rate').value.trim();
+  if(sr)br.spiff_rate=parseFloat(sr);
+  rules[brand]=br;
+  savePricingRules(rules);
   refreshPricingBrandSelects();
   toast('Rules saved for '+brand);
 }
+
 function deleteRuleBrand(){
   const brand=document.getElementById('rulesModalBrand').value;
   if(!brand||!confirm('Delete rules for '+brand+'?'))return;
-  delete pricingRules[brand];
-  savePricingRules();
+  const rules=loadPricingRules();
+  delete rules[brand];
+  savePricingRules(rules);
   refreshPricingBrandSelects();
   document.getElementById('rulesModalBrand').value='';
   document.getElementById('ruleEditorArea').style.display='none';
   toast('Deleted '+brand);
 }
-function exportRulesJSON(){downloadBlob('pricing-rules.json',JSON.stringify(pricingRules,null,2),'application/json');}
+
+function exportRulesJSON(){
+  const rules=loadPricingRules();
+  downloadBlob('pricing-rules.json',JSON.stringify(rules,null,2),'application/json');
+}
+
 async function importRulesJSON(inp){
   const file=inp.files[0];if(!file)return;
   try{
     const text=await readFileText(file);
     const imported=JSON.parse(text);
-    Object.assign(pricingRules,imported);
-    savePricingRules();
+    const existing=loadPricingRules();
+    const merged=Object.assign({},existing,imported);
+    savePricingRules(merged);
     refreshPricingBrandSelects();
     toast('Imported '+Object.keys(imported).length+' brand rules');
   }catch(e){toast('Import failed: '+e.message,'error');}
@@ -606,35 +766,120 @@ async function importRulesJSON(inp){
 // ══════════════════════════════════════════════════════════
 // SPIFF CALCULATOR
 // ══════════════════════════════════════════════════════════
-let spiffBrands=[],spiffRows=[],spiffCalcRows=[];
+const DEFAULT_SPIFF_BRANDS=[
+  {code:'AGA',rate:null,aliases:['AGA','AGA Ranges'],notes:''},
+  {code:'ALF',rate:null,aliases:['ALF','Alfa'],notes:'none'},
+  {code:'ASK',rate:0.025,aliases:['ASK','Askoll'],notes:''},
+  {code:'BLU',rate:0.015,aliases:['BLU','BlueStar','Blue Star'],notes:'Cost mult'},
+  {code:'BES',rate:0.025,aliases:['BES','Best'],notes:''},
+  {code:'BOS',rate:0.03,aliases:['BOS','Bosch'],notes:''},
+  {code:'BRO',rate:null,aliases:['BRO','Brown'],notes:'NA'},
+  {code:'CND',rate:null,aliases:['CND'],notes:'NA'},
+  {code:'COV',rate:0.025,aliases:['COV','Cove'],notes:''},
+  {code:'COY',rate:0.025,aliases:['COY','Coyote'],notes:''},
+  {code:'DAN',rate:null,aliases:['DAN','Danby'],notes:''},
+  {code:'ECHEF',rate:null,aliases:['ECHEF','E-Chef','EChef'],notes:''},
+  {code:'ELI',rate:null,aliases:['ELI','Elite'],notes:''},
+  {code:'ELX',rate:0.025,aliases:['ELX','Electrolux'],notes:''},
+  {code:'FAB',rate:null,aliases:['FAB','Fabriano'],notes:''},
+  {code:'FAL',rate:null,aliases:['FAL','Falcon'],notes:'NA'},
+  {code:'FRG',rate:0.025,aliases:['FRG','Frigidaire'],notes:''},
+  {code:'FHIA',rate:null,aliases:['FHIA','FHiA'],notes:'Included in cost'},
+  {code:'F&P',rate:0.02,aliases:['F&P','Fisher & Paykel','Fisher and Paykel','Fisher Paykel'],notes:''},
+  {code:'GAL',rate:null,aliases:['GAL','Galanz'],notes:''},
+  {code:'GAG',rate:null,aliases:['GAG','Gaggenau'],notes:'K'},
+  {code:'GEH',rate:0.022,aliases:['GEH','GE Haier','GE'],notes:''},
+  {code:'HEA',rate:null,aliases:['HEA','Heartland'],notes:'Spiff sheet'},
+  {code:'HES',rate:0.03,aliases:['HES','Hestan'],notes:''},
+  {code:'HOS',rate:null,aliases:['HOS','Hoshizaki'],notes:'NA'},
+  {code:'JEN',rate:null,aliases:['JEN','Jenn-Air','JennAir','Jenn Air'],notes:''},
+  {code:'KEN',rate:null,aliases:['KEN','Kenmore'],notes:''},
+  {code:'KAL',rate:null,aliases:['KAL','Kalamazoo'],notes:'NA'},
+  {code:'KSK',rate:0.03,aliases:['KSK','Kalamazoo Specialty'],notes:''},
+  {code:'LAC',rate:0.03,aliases:['LAC','La Cornue'],notes:''},
+  {code:'LGSTUDIO',rate:0.03,aliases:['LGSTUDIO','LG Studio','LGStudio'],notes:''},
+  {code:'LG',rate:0.047,aliases:['LG','LG Electronics'],notes:''},
+  {code:'LIE',rate:null,aliases:['LIE','Liebherr'],notes:'Spiff sheet'},
+  {code:'LYN',rate:0.04,aliases:['LYN','Lynx'],notes:''},
+  {code:'MAR',rate:0.03,aliases:['MAR','Marvel'],notes:''},
+  {code:'MON',rate:0.02,aliases:['MON','Monogram'],notes:''},
+  {code:'MNL',rate:null,aliases:['MNL','Miele'],notes:'Ask for spiff sheet'},
+  {code:'MIE',rate:null,aliases:['MIE'],notes:''},
+  {code:'PER',rate:0.03,aliases:['PER','Perlick'],notes:''},
+  {code:'SAM',rate:0.015,aliases:['SAM','Samsung'],notes:''},
+  {code:'SME',rate:null,aliases:['SME'],notes:'NA'},
+  {code:'SKS',rate:0.03,aliases:['SKS'],notes:''},
+  {code:'SUM',rate:null,aliases:['SUM','Summit'],notes:'NA'},
+  {code:'SCO',rate:0.035,aliases:['SCO','Scotsman'],notes:''},
+  {code:'SPQ',rate:null,aliases:['SPQ'],notes:'NA'},
+  {code:'SUB',rate:0.025,aliases:['SUB','Sub-Zero','Sub Zero','SubZero'],notes:''},
+  {code:'SRP',rate:null,aliases:['SRP'],notes:''},
+  {code:'TRA',rate:0.035,aliases:['TRA','Traeger'],notes:''},
+  {code:'THO',rate:null,aliases:['THO','Thor'],notes:'NA'},
+  {code:'THM',rate:0.03,aliases:['THM','Thermador'],notes:''},
+  {code:'TRU',rate:0.03,aliases:['TRU','True'],notes:''},
+  {code:'ULI',rate:0.025,aliases:['ULI','U-Line','ULine'],notes:''},
+  {code:'URBBN',rate:null,aliases:['URBBN','Urban Bonfire'],notes:''},
+  {code:'VAH',rate:null,aliases:['VAH','Vah'],notes:''},
+  {code:'VIN',rate:null,aliases:['VIN','Vintage'],notes:''},
+  {code:'VIK',rate:0.035,aliases:['VIK','Viking'],notes:''},
+  {code:'WHR',rate:0.03,aliases:['WHR','Whirlpool'],notes:''},
+  {code:'WOL',rate:0.025,aliases:['WOL','Wolf'],notes:''},
+  {code:'XO',rate:null,aliases:['XO'],notes:''},
+  {code:'ZEP',rate:0.03,aliases:['ZEP','Zephyr'],notes:''},
+  {code:'ZLINE',rate:null,aliases:['ZLINE','Z Line'],notes:''},
+  {code:'ZIP',rate:null,aliases:['ZIP','Zip Water'],notes:''},
+];
 
-function saveSpiffBrandsToServer(){
-  lsSet(LS_SPIFF, spiffBrands); setSynced();
+let spiffBrands,spiffRows=[],spiffCalcRows=[];
+
+function loadSpiffBrands(){
+  try{return JSON.parse(localStorage.getItem('fuseHub_spiffBrands'))||null;}catch{return null;}
 }
+function saveSpiffBrands(b){localStorage.setItem('fuseHub_spiffBrands',JSON.stringify(b));}
+
 function getBrandByMFR(mfr){
-  if(!mfr)return null;const m=mfr.trim().toUpperCase();
-  let b=spiffBrands.find(b=>b.code.toUpperCase()===m);if(b)return b;
-  b=spiffBrands.find(b=>b.aliases&&b.aliases.some(a=>a.toUpperCase()===m));if(b)return b;
+  if(!mfr)return null;
+  const m=mfr.trim().toUpperCase();
+  // Exact code match
+  let b=spiffBrands.find(b=>b.code.toUpperCase()===m);
+  if(b)return b;
+  // Alias match
+  b=spiffBrands.find(b=>b.aliases&&b.aliases.some(a=>a.toUpperCase()===m));
+  if(b)return b;
+  // Partial alias match
   b=spiffBrands.find(b=>b.aliases&&b.aliases.some(a=>m.includes(a.toUpperCase())||a.toUpperCase().includes(m)));
   return b||null;
 }
+
 async function loadSpiffFile(inp){
   const file=inp.files[0];if(!file)return;
   setZoneFile('spiffZone','spiffZoneLabel',file.name);
+  // Auto-detect period from filename
   const m=file.name.match(/(\d{4}[-_]\d{2}|\w+[-_]\d{4}|[A-Za-z]+-\d{4})/);
   if(m)document.getElementById('spiffPeriod').value=m[1].replace(/[-_]/g,' ');
   try{
     const ext=file.name.split('.').pop().toLowerCase();
-    if(ext==='csv'){const text=await readFileText(file);spiffRows=parseCSV(text);}
-    else{const buf=await readFileArrayBuffer(file);const wb=XLSX.read(buf,{type:'array'});spiffRows=xlsxToRows(wb);}
-    const st=document.getElementById('spiffStatus');st.style.display='flex';
+    if(ext==='csv'){
+      const text=await readFileText(file);
+      spiffRows=parseCSV(text);
+    } else {
+      const buf=await readFileArrayBuffer(file);
+      const wb=XLSX.read(buf,{type:'array'});
+      spiffRows=xlsxToRows(wb);
+    }
+    const st=document.getElementById('spiffStatus');
+    st.style.display='flex';
     st.innerHTML='<div class="dot dot-ok"></div><span>'+spiffRows.length+' rows loaded</span>';
     toast('Loaded '+spiffRows.length+' rows');
   }catch(e){toast('Load error: '+e.message,'error');}
 }
+
 function runSpiffCalc(){
   if(!spiffRows.length){toast('No file loaded','error');return;}
-  const sample=spiffRows[0];const cols=Object.keys(sample);
+  // Auto-detect columns
+  const sample=spiffRows[0];
+  const cols=Object.keys(sample);
   const mfrCol=cols.find(c=>/mfr|brand|manufacturer|make/i.test(c))||cols[0];
   const modelCol=cols.find(c=>/model|item|sku/i.test(c))||cols[1];
   const costCol=cols.find(c=>/cost|invoice/i.test(c));
@@ -642,38 +887,65 @@ function runSpiffCalc(){
   const qtyCol=cols.find(c=>/qty|quantity/i.test(c));
   const unmatched=new Set();
   spiffCalcRows=spiffRows.map(row=>{
-    const mfr=row[mfrCol]||'';const brand=getBrandByMFR(mfr);
+    const mfr=row[mfrCol]||'';
+    const brand=getBrandByMFR(mfr);
     const cost=parseFloat(String(row[costCol]||'0').replace(/[$,]/g,''))||0;
-    const qty=parseFloat(row[qtyCol]||1)||1;const totalCost=cost*qty;
+    const qty=parseFloat(row[qtyCol]||1)||1;
+    const totalCost=cost*qty;
     let spiffAmt=null;
-    if(brand&&brand.rate!=null){spiffAmt=totalCost*brand.rate;}
-    else if(!brand&&mfr)unmatched.add(mfr);
-    return{MFR:mfr,MODEL:row[modelCol]||'',REP:row[repCol]||'',COST:cost,QTY:qty,TOTAL_COST:totalCost,
-      BRAND_CODE:brand?brand.code:'?',SPIFF_RATE:brand?brand.rate:null,SPIFF_AMT:spiffAmt,NOTES:brand?brand.notes:''};
+    if(brand&&brand.rate!=null){
+      spiffAmt=totalCost*brand.rate;
+    } else if(!brand&&mfr){
+      unmatched.add(mfr);
+    }
+    return {
+      MFR:mfr,
+      MODEL:row[modelCol]||'',
+      REP:row[repCol]||'',
+      COST:cost,
+      QTY:qty,
+      TOTAL_COST:totalCost,
+      BRAND_CODE:brand?brand.code:'?',
+      SPIFF_RATE:brand?brand.rate:null,
+      SPIFF_AMT:spiffAmt,
+      NOTES:brand?brand.notes:'',
+      _brand:brand
+    };
   });
-  if(unmatched.size>0)toast('Unmatched: '+[...unmatched].slice(0,5).join(', '),'warning');
+  if(unmatched.size>0)toast('Unmatched brands: '+[...unmatched].slice(0,5).join(', ')+(unmatched.size>5?' +more':''),'warning');
   const total=spiffCalcRows.reduce((s,r)=>s+(r.SPIFF_AMT||0),0);
   document.getElementById('spiffGrandTotal').textContent='$'+total.toFixed(2);
   document.getElementById('spiffRowCount').textContent=spiffCalcRows.length;
-  renderSpiffResults();toast('Calculated SPIFF for '+spiffCalcRows.length+' rows');
+  renderSpiffResults();
+  toast('Calculated SPIFF for '+spiffCalcRows.length+' rows');
 }
+
 function renderSpiffResults(){
+  // Brand summary
   const brandTotals={};
   spiffCalcRows.forEach(r=>{
     const k=r.BRAND_CODE;
     if(!brandTotals[k])brandTotals[k]={code:k,count:0,totalCost:0,totalSpiff:0,rate:r.SPIFF_RATE,notes:r.NOTES};
-    brandTotals[k].count++;brandTotals[k].totalCost+=r.TOTAL_COST;brandTotals[k].totalSpiff+=r.SPIFF_AMT||0;
+    brandTotals[k].count++;
+    brandTotals[k].totalCost+=r.TOTAL_COST;
+    brandTotals[k].totalSpiff+=r.SPIFF_AMT||0;
   });
   const brands=Object.values(brandTotals).sort((a,b)=>b.totalSpiff-a.totalSpiff);
   const rTh='<tr><th>Brand</th><th>Lines</th><th>Total Cost</th><th>SPIFF Rate</th><th>SPIFF Amount</th><th>Notes</th></tr>';
-  const rTr=brands.map(b=>'<tr><td class="td-accent">'+b.code+'</td><td>'+b.count+'</td><td>'+fmt$(b.totalCost)+'</td><td>'+(b.rate!=null?fmtPct(b.rate):'<span class="td-na">N/A</span>')+'</td><td>'+(b.totalSpiff>0?fmt$(b.totalSpiff):'<span class="td-na">—</span>')+'</td><td style="color:var(--text3)">'+b.notes+'</td></tr>').join('');
+  const rTr=brands.map(b=>'<tr><td class="td-accent">'+b.code+'</td><td>'+b.count+'</td><td>'+fmt$(b.totalCost)+'</td><td>'+
+    (b.rate!=null?fmtPct(b.rate):'<span class="td-na">N/A</span>')+'</td><td>'+
+    (b.totalSpiff>0?fmt$(b.totalSpiff):'<span class="td-na">—</span>')+'</td><td style="color:var(--text3)">'+b.notes+'</td></tr>').join('');
   document.getElementById('spiffResultTable').innerHTML='<thead>'+rTh+'</thead><tbody>'+rTr+'</tbody>';
+  // Detail
   const dTh='<tr><th>MFR</th><th>Model</th><th>Rep</th><th>Qty</th><th>Cost</th><th>Total Cost</th><th>SPIFF Rate</th><th>SPIFF $</th></tr>';
-  const dTr=spiffCalcRows.slice(0,500).map(r=>'<tr><td class="td-accent">'+r.MFR+'</td><td>'+r.MODEL+'</td><td>'+r.REP+'</td><td>'+r.QTY+'</td><td>'+fmt$(r.COST)+'</td><td>'+fmt$(r.TOTAL_COST)+'</td><td>'+(r.SPIFF_RATE!=null?fmtPct(r.SPIFF_RATE):'<span class="td-na">N/A</span>')+'</td><td>'+(r.SPIFF_AMT!=null?fmt$(r.SPIFF_AMT):'<span class="td-na">—</span>')+'</td></tr>').join('');
+  const dTr=spiffCalcRows.slice(0,500).map(r=>'<tr><td class="td-accent">'+r.MFR+'</td><td>'+r.MODEL+'</td><td>'+r.REP+'</td><td>'+r.QTY+'</td><td>'+fmt$(r.COST)+'</td><td>'+fmt$(r.TOTAL_COST)+'</td><td>'+
+    (r.SPIFF_RATE!=null?fmtPct(r.SPIFF_RATE):'<span class="td-na">N/A</span>')+'</td><td>'+
+    (r.SPIFF_AMT!=null?fmt$(r.SPIFF_AMT):'<span class="td-na">—</span>')+'</td></tr>').join('');
   document.getElementById('spiffDetailTable').innerHTML='<thead>'+dTh+'</thead><tbody>'+dTr+'</tbody>';
   document.getElementById('spiffResultCard').style.display='block';
   document.getElementById('spiffDetailCard').style.display='block';
 }
+
 function exportSpiff(){
   if(!spiffCalcRows.length){toast('Nothing to export','error');return;}
   const period=document.getElementById('spiffPeriod').value||'SPIFF';
@@ -682,22 +954,34 @@ function exportSpiff(){
   downloadBlob('SPIFF_'+period.replace(/\s+/g,'_')+'.csv',[header.join(','),...rows].join('\n'),'text/csv');
   toast('Exported!');
 }
+
 function openSpiffBrands(){renderSpiffBrandTable();openModal('spiffBrandsModal');}
+
 function renderSpiffBrandTable(){
   const q=(document.getElementById('spiffBrandSearch').value||'').toLowerCase();
   const filtered=spiffBrands.filter(b=>!q||b.code.toLowerCase().includes(q)||b.aliases.some(a=>a.toLowerCase().includes(q)));
   const ths='<tr><th>Code</th><th>Rate</th><th>Aliases</th><th>Notes</th><th></th></tr>';
-  const trs=filtered.map(b=>{
-    const ratePill=b.rate!=null?'<span class="rate-pill rate-val">'+(b.rate*100).toFixed(1)+'%</span>':(b.notes&&b.notes.toLowerCase()!=='na'&&b.notes?'<span class="rate-pill rate-special">'+b.notes+'</span>':'<span class="rate-pill rate-na">N/A</span>');
+  const trs=filtered.map((b,i)=>{
+    const ratePill=b.rate!=null?'<span class="rate-pill rate-val">'+(b.rate*100).toFixed(1)+'%</span>':
+      (b.notes&&b.notes.toLowerCase()!=='na'&&b.notes?'<span class="rate-pill rate-special">'+b.notes+'</span>':'<span class="rate-pill rate-na">N/A</span>');
+    const aliasStr=b.aliases.slice(1).join(', ')||'—';
     const idx=spiffBrands.indexOf(b);
-    return '<tr><td class="td-accent">'+b.code+'</td><td>'+ratePill+'</td><td style="max-width:200px;color:var(--text3)">'+b.aliases.slice(1).join(', ')+'</td><td style="color:var(--text3)">'+b.notes+'</td><td><button class="btn btn-ghost" style="padding:4px 10px" onclick="openEditSpiffBrand('+idx+')">Edit</button></td></tr>';
+    return '<tr><td class="td-accent">'+b.code+'</td><td>'+ratePill+'</td><td style="max-width:200px;color:var(--text3)">'+aliasStr+'</td><td style="color:var(--text3)">'+b.notes+'</td>'+
+      '<td><button class="btn btn-ghost" style="padding:4px 10px" onclick="openEditSpiffBrand('+idx+')">Edit</button></td></tr>';
   }).join('');
   document.getElementById('spiffBrandTable').innerHTML='<thead>'+ths+'</thead><tbody>'+trs+'</tbody>';
 }
+
 let editingSpiffIdx=-1;
-function openAddSpiffBrand(){editingSpiffIdx=-1;document.getElementById('spiffEditTitle').textContent='Add Brand';['code','rate','aliases','notes'].forEach(f=>document.getElementById('eb-'+f).value='');openModal('spiffEditModal');}
+function openAddSpiffBrand(){
+  editingSpiffIdx=-1;
+  document.getElementById('spiffEditTitle').textContent='Add Brand';
+  ['code','rate','aliases','notes'].forEach(f=>document.getElementById('eb-'+f).value='');
+  openModal('spiffEditModal');
+}
 function openEditSpiffBrand(idx){
-  editingSpiffIdx=idx;const b=spiffBrands[idx];
+  editingSpiffIdx=idx;
+  const b=spiffBrands[idx];
   document.getElementById('spiffEditTitle').textContent='Edit '+b.code;
   document.getElementById('eb-code').value=b.code;
   document.getElementById('eb-rate').value=b.rate!=null?b.rate:'';
@@ -714,17 +998,1821 @@ function saveSpiffBrand(){
   if(!aliases.length)aliases.push(code);
   const notes=document.getElementById('eb-notes').value.trim();
   const entry={code,rate,aliases,notes};
-  if(editingSpiffIdx>=0)spiffBrands[editingSpiffIdx]=entry;else spiffBrands.push(entry);
-  saveSpiffBrandsToServer();
-  renderSpiffBrandTable();closeModal('spiffEditModal');toast('Saved '+code);
+  if(editingSpiffIdx>=0)spiffBrands[editingSpiffIdx]=entry;
+  else spiffBrands.push(entry);
+  saveSpiffBrands(spiffBrands);
+  renderSpiffBrandTable();
+  closeModal('spiffEditModal');
+  toast('Saved '+code);
 }
 function resetSpiffBrands(){
   if(!confirm('Reset all brand rates to defaults?'))return;
-  localStorage.removeItem(LS_SPIFF);
   spiffBrands=JSON.parse(JSON.stringify(DEFAULT_SPIFF_BRANDS));
-  saveSpiffBrandsToServer();
-  renderSpiffBrandTable();toast('Reset to defaults');
+  saveSpiffBrands(spiffBrands);
+  renderSpiffBrandTable();
+  toast('Reset to defaults');
 }
+
+const PO_CONVERSION = {
+  'NP32745': 342,
+  'ML83850': 2325,
+  'ML83730': 2321,
+  'ML83690': 2318,
+  'FT57203': 2302,
+  'FT56083': 933,
+  'NP33085': 1184,
+  'NP33674': 1560,
+  'FT57206': 1860,
+  'SO0008580-1': 2305,
+  'FT57117': 676,
+  'PR11216': 948,
+  'PR11288': 1005,
+  'NP33225': 945,
+  'FT56322': 944,
+  'FT56093': 937,
+  'NP33083': 919,
+  'FT56008': 916,
+  'PR11186': 913,
+  'PR11183': 911,
+  'NP33035': 906,
+  'PR11143': 893,
+  'PR11139': 889,
+  'FT55225': 887,
+  'FR10048': 886,
+  'FT55149': 885,
+  'FT55143': 875,
+  'FT54558': 866,
+  'FT54477': 863,
+  'FT54296': 847,
+  'NP32284': 844,
+  'FT54259': 843,
+  'NP32240': 839,
+  'FT54163': 832,
+  'FT51272': 814,
+  'FT51163': 807,
+  'FT51002': 792,
+  'FT50928': 788,
+  'FT50728': 785,
+  'FT50520': 777,
+  'PR10818': 771,
+  'PR10813': 766,
+  'FT48623': 759,
+  'PR10741': 748,
+  'PR10740': 747,
+  'NP30059': 741,
+  'PR10683': 734,
+  'FT57158': 718,
+  'FT57126': 681,
+  'PR11334': 679,
+  'NP33627': 677,
+  'FT56740': 667,
+  'FT57099': 659,
+  'FT57098': 657,
+  'NP33616': 655,
+  'FT57089': 650,
+  'FT56991': 645,
+  'NP33559': 637,
+  'FT56968': 627,
+  'FT56965': 624,
+  'NP33547': 618,
+  'NP33544': 611,
+  'NP33542': 609,
+  'FT56946': 606,
+  'FT56941': 603,
+  'PR11309': 595,
+  'NP33531': 591,
+  'FT56905': 588,
+  'FT56877': 576,
+  'FT56846': 567,
+  'FT56847': 566,
+  'FT56688': 561,
+  'NP33409': 548,
+  'PR11272': 543,
+  'PR11268': 541,
+  'NP33394': 539,
+  'FT56638': 537,
+  'NP33384': 535,
+  'FT56624': 534,
+  'FT56600': 529,
+  'FT53614': 524,
+  'FT56577': 520,
+  'FT56538': 515,
+  'NP33324': 504,
+  'PR11245': 482,
+  'PR11244': 481,
+  'PR11239': 478,
+  'PR11238': 477,
+  'PR11215': 472,
+  'PR10760': 425,
+  'PR10759': 424,
+  'PR10758': 423,
+  'PR11170': 402,
+  'NP32939': 395,
+  'PR11161': 387,
+  'PR11294': 1459,
+  'NP33110': 1192,
+  'NP33113': 1194,
+  'FT55968': 1198,
+  'FT56325': 1205,
+  'FT57001': 1229,
+  'PR11327': 1246,
+  'FT57148': 1247,
+  'NP33654': 1252,
+  'NP33657': 1258,
+  'FT57190': 1271,
+  'FT52064': 1284,
+  'FT52238': 1288,
+  'FT52720': 1301,
+  'FT52831': 1303,
+  'PR10964': 1321,
+  'FT53836': 1323,
+  'FT53969': 1330,
+  'FT54061': 1340,
+  'NP32245': 1354,
+  'NP32496': 1370,
+  'PR11037': 1378,
+  'FT55106': 1393,
+  'FT56026': 1419,
+  'NP33099': 1420,
+  'FT56332': 1426,
+  'NP33241': 1431,
+  'FT56361': 1434,
+  'FT56368': 1440,
+  'FT56377': 1443,
+  'FT56386': 1446,
+  'SD10037': 1448,
+  'FT52147': 1452,
+  'PD10232': 487,
+  'FT56425': 490,
+  'FT56155': 1711,
+  'PR11218': 950,
+  'PR11219': 951,
+  'PR11234': 966,
+  'PR11254': 972,
+  'NP33407': 974,
+  'NP33408': 976,
+  'FT56708': 985,
+  'FT56690': 987,
+  'FT56726': 990,
+  'SD10038': 993,
+  'NP33449': 996,
+  'NP33453': 997,
+  'FT56761': 1001,
+  'PR11290': 1007,
+  'NP33553': 1017,
+  'NP33565': 1028,
+  'FT56994': 1030,
+  'FT56993': 1031,
+  'PR11325': 1037,
+  'FT57005': 1039,
+  'PD10236': 1047,
+  'NP33630': 1060,
+  'FR10066': 1067,
+  'FT50647': 1096,
+  'FT51175': 1112,
+  'NP31057': 1115,
+  'FT51315': 1119,
+  'NP32309': 1136,
+  'FT54414': 1141,
+  'FT54612': 1149,
+  'FT55363': 1163,
+  'FT55418': 1165,
+  'FT55561': 1177,
+  'DS10724': 1182,
+  'NP33112': 1193,
+  'FT56094': 1200,
+  'NP33446': 1216,
+  'FT56745': 1218,
+  'NP33573': 1235,
+  'FT57039': 1245,
+  'NP33649': 1250,
+  'FT57165': 1254,
+  'PR11337': 1255,
+  'FT57178': 1265,
+  'PR10823': 1275,
+  'PR10828': 1280,
+  'FT52285': 1289,
+  'FT52350': 1292,
+  'FT52408': 1293,
+  'NP31526': 1294,
+  'NP30641': 1299,
+  'FT53216': 1309,
+  'FT53597': 1316,
+  'FT53911': 1325,
+  'FT53975': 1331,
+  'FT53990': 1332,
+  'FT54056': 1339,
+  'FT54064': 1342,
+  'FT54066': 1343,
+  'FT54084': 1347,
+  'FT54295': 1359,
+  'FT54357': 1361,
+  'FT54704': 1364,
+  'FT55004': 1385,
+  'DS10740': 1401,
+  'NP33032': 1412,
+  'PD10230': 1423,
+  'NP33239': 1427,
+  'PR11256': 1432,
+  'PD10231': 1441,
+  'YD10125': 1447,
+  'FT53488': 1450,
+  'NP33462': 1455,
+  'NP33366': 1456,
+  'PR11292': 1457,
+  'PR11293': 1458,
+  'FT56802': 1469,
+  'FT56822': 1482,
+  'NP33487': 1485,
+  'NP33494': 1488,
+  'NP33593': 1505,
+  'FT57053': 1507,
+  'DS10839': 1516,
+  'FR10001RA': 1518,
+  'NP33606': 1528,
+  'PR11341': 1548,
+  'NP33667': 1552,
+  'PR11356': 1567,
+  'FT57207': 1568,
+  'PR10876': 1577,
+  'FT51447': 1579,
+  'BD10242': 1589,
+  'FT51829': 1596,
+  'PD10203': 1619,
+  'FT53339': 1630,
+  'NP32125': 1641,
+  'FT53959': 1642,
+  'FT53967': 1645,
+  'FT54700': 1657,
+  'NP32618': 1676,
+  'FT55706': 1692,
+  'FT55786': 1697,
+  'FT55871': 1704,
+  'PR11213': 470,
+  'FT56345': 502,
+  'PR11262': 514,
+  'FT56858': 570,
+  'PR11307': 587,
+  'FT56913': 592,
+  'PR11311': 597,
+  'FT56943': 604,
+  'BD10288': 607,
+  'NP33549': 622,
+  'FT56967': 626,
+  'FT56070': 638,
+  'FT57084': 648,
+  'PR11333': 663,
+  'FT57127': 685,
+  'FT57132': 686,
+  'FT57137': 689,
+  'NP33516': 706,
+  'NP33652': 720,
+  'BD10139': 727,
+  'PR10674': 729,
+  'PR10675': 730,
+  'FT48965': 745,
+  'PR10409': 750,
+  'PR10822': 780,
+  'PD10169': 787,
+  'NP30989': 795,
+  'PD10177': 808,
+  'NP31091': 815,
+  'PR10875': 822,
+  'FT54150': 824,
+  'FT54154': 826,
+  'FT54159': 829,
+  'NP32225': 836,
+  'FT54252': 842,
+  'NP32288': 845,
+  'FT54424': 859,
+  'FT55204': 884,
+  'FT55397': 898,
+  'NP32800': 900,
+  'FT55464': 901,
+  'FT55945': 907,
+  'NP33107': 927,
+  'NP33223': 943,
+  'PR11220': 952,
+  'FT56660': 975,
+  'FT56668': 980,
+  'NP33437': 989,
+  'NP33448': 995,
+  'FT56757': 1000,
+  'NP33551': 1015,
+  'PR11323': 1027,
+  'FT56998': 1034,
+  'FT56996': 1036,
+  'FT57015': 1043,
+  'FT57019': 1045,
+  'FT57028': 1054,
+  'NP33633': 1062,
+  'FT57139': 1065,
+  'FT57153': 1073,
+  'NP33650': 1074,
+  'PR11336': 1078,
+  'NP33658': 1083,
+  'NP30901': 1100,
+  'DR10005': 1106,
+  'FT51117': 1109,
+  'FT51316': 1120,
+  'FT54517': 1144,
+  'BD10274': 1147,
+  'NP32694': 1158,
+  'FT55282': 1161,
+  'FT54665': 1176,
+  'FT55570': 1178,
+  'NP33104': 1189,
+  'FT56067': 1191,
+  'FT56781': 1462,
+  'FT56817': 1476,
+  'FT56819': 1478,
+  'FT56820': 1479,
+  'FT56844': 1489,
+  'NP33585': 1497,
+  'FT57049': 1504,
+  'NP33603': 1523,
+  'FT57070': 1524,
+  'FT57170': 1538,
+  'FT57187': 1547,
+  'FT57196': 1553,
+  'PR11347': 1555,
+  'FT57200': 1559,
+  'NP33676': 1563,
+  'PR11352': 1564,
+  'FT49990': 1570,
+  'FT50253': 1572,
+  'FT51444': 1578,
+  'FT51454': 1581,
+  'BD10253': 1582,
+  'FT51781': 1594,
+  'FT51914': 1598,
+  'SD10034': 1614,
+  'FT52631': 1616,
+  'FT51574': 1626,
+  'FT53596': 1632,
+  'NP32031': 1636,
+  'FT54070': 1651,
+  'FT54088': 1652,
+  'FT54959': 1674,
+  'FT55324': 1681,
+  'FT56144': 1709,
+  'NP33157': 1714,
+  'ND10290': 1724,
+  'FT56335': 1738,
+  'PR11257': 1741,
+  'NP33254': 1744,
+  'NP33261': 1747,
+  'NP33269': 1749,
+  'BD10286': 1752,
+  'FT56460': 1760,
+  'FT56561': 1767,
+  'DS10797': 1778,
+  'PR11265': 1780,
+  'NP33403': 1786,
+  'NP33498': 1805,
+  'NP33523': 1808,
+  'NP33538': 1820,
+  'NP33588': 1829,
+  'FT57055': 1836,
+  'FT57064': 1838,
+  'FT57103': 1844,
+  'FT57112': 1846,
+  'PR11349': 1852,
+  'FT50424': 1884,
+  'FT50936': 1889,
+  'BD10252': 1897,
+  'FT51166': 1901,
+  'FT51759': 1905,
+  'FT52150': 1913,
+  'NP32839': 1931,
+  'FT56045': 1936,
+  'FT56328': 1943,
+  'FT50794': 1945,
+  'NP33303': 1947,
+  'FT56721': 1953,
+  'FT56845': 1961,
+  'FT57048': 1976,
+  'FT40339RA': 1992,
+  'FT40958': 1993,
+  'FT48651': 2001,
+  'FT45789RA': 2002,
+  'FT52762': 2014,
+  'FR10026': 2016,
+  'FT53668': 2027,
+  'FT53839': 2033,
+  'FT53968': 2037,
+  'NP32294': 2047,
+  'FT55072': 2063,
+  'FT56009': 2083,
+  'PR11304': 2109,
+  'FT56890': 2112,
+  'NP33517': 2114,
+  'NP33529': 2115,
+  'FT56909': 2116,
+  'NP33533': 2119,
+  'PR11312': 2121,
+  'FT57093': 2126,
+  'FT57121': 2131,
+  'FT57152': 2138,
+  'NP31275': 2160,
+  'NP31120': 2165,
+  'FT51420': 2166,
+  'FT51467': 2168,
+  'FT52149': 2174,
+  'NP32012': 2188,
+  'FT53740': 2189,
+  'NP31203': 2205,
+  'NP32569': 2215,
+  'FT54945': 2216,
+  'FT55770': 2221,
+  'NP32973': 408,
+  'FT56284': 465,
+  'FT56310': 473,
+  'FD10153': 486,
+  'NP33306': 494,
+  'FT55923': 2227,
+  'FT56147': 2235,
+  'FT56168': 2237,
+  'NP33247': 2246,
+  'FT56399': 2249,
+  'FT56465': 2251,
+  'FT56642': 2262,
+  'FT56841': 2272,
+  'FT56889': 2276,
+  'FT56910': 2279,
+  'FT57075': 2292,
+  'FT57094': 2294,
+  'NP33620': 2296,
+  'PR10748': 260,
+  'PR10806': 280,
+  'FT50140': 285,
+  'FT54441': 289,
+  'NP32375': 296,
+  'FT54549': 298,
+  'PR11098': 315,
+  'FT51966': 327,
+  'PR11127': 344,
+  'FT55535': 370,
+  'FT56250': 1723,
+  'FT56398': 1748,
+  'FT56409': 1751,
+  'MD10094': 1753,
+  'NP33280': 1754,
+  'NP33287': 1756,
+  'NP33313': 1761,
+  'FT56573': 1769,
+  'FT56601': 1774,
+  'PR11270': 1784,
+  'FT56653': 1785,
+  'FT56793': 1790,
+  'NP33474': 1792,
+  'FT56851': 1801,
+  'SD10039': 1810,
+  'NP33534': 1815,
+  'FT57083': 1841,
+  'FT57118': 1849,
+  'FT57194': 1850,
+  'FT43259R': 1863,
+  'ND10206': 1879,
+  'FT50709': 1886,
+  'FT51403': 1898,
+  'FT51418': 1899,
+  'FT52032': 1911,
+  'NP32380': 1916,
+  'NP32435': 1921,
+  'NP32747': 1926,
+  'FT55444': 1930,
+  'NP33138': 1937,
+  'FT56180': 1941,
+  'PR11260': 1948,
+  'FT56472': 1949,
+  'NP33576': 1971,
+  'DS10849': 1981,
+  'NP33672': 1989,
+  'NP29713': 1998,
+  'FT49599': 2004,
+  'FT52306': 2010,
+  'FT50700': 2029,
+  'NP32160': 2038,
+  'FT54054': 2039,
+  'FT54086': 2042,
+  'NP32224': 2044,
+  'FT54693': 2052,
+  'FT54960': 2058,
+  'FT55339': 2066,
+  'NP32987': 2073,
+  'NP33065': 2081,
+  'NP33174': 2087,
+  'NP33179': 2089,
+  'FT56623': 2099,
+  'FT51807': 2101,
+  'FT56177': 2125,
+  'FT51312': 2149,
+  'PD10195': 2162,
+  'FT51395': 2164,
+  'FT51452': 2167,
+  'SD10032': 2169,
+  'FT52645': 2178,
+  'FT53359': 2185,
+  'FT53957': 2194,
+  'FT54694': 2202,
+  'NP32548': 2210,
+  'FT54867': 2211,
+  'NP33030': 2226,
+  'FT56176': 2238,
+  'NP33267': 2248,
+  'NP33370': 2257,
+  'FT56622': 2259,
+  'FT56854': 2274,
+  'FT56894': 2277,
+  'NP33591': 2285,
+  'FT57189': 1853,
+  'FT54455': 293,
+  'FT56117': 553,
+  'PR10744': 256,
+  'PR10745': 257,
+  'PR10746': 258,
+  'PR10747': 259,
+  'PR10749': 261,
+  'PR10750': 262,
+  'PR10751': 263,
+  'PR10752': 264,
+  'PR10761': 265,
+  'PR10762': 266,
+  'PR10763': 267,
+  'PR10764': 268,
+  'PR10765': 269,
+  'DR10006': 270,
+  'DR10007': 271,
+  'DR10008': 272,
+  'DR10009': 273,
+  'NP30637': 274,
+  'NP30699': 275,
+  'FT50242': 276,
+  'FT50442': 277,
+  'PR10743': 278,
+  'FT50489': 279,
+  'PR10807': 281,
+  'PR10808': 282,
+  'PR10809': 283,
+  'FT54389': 284,
+  'FT54415': 286,
+  'FD10145': 287,
+  'NP32359': 288,
+  'FT54443': 290,
+  'FT54445': 291,
+  'FT54453': 292,
+  'NP32371': 294,
+  'FT54464': 295,
+  'NP32407': 297,
+  'NP32412': 299,
+  'FT54594': 300,
+  'PR11008': 301,
+  'PR11009': 302,
+  'PR11014': 303,
+  'PR11015': 304,
+  'FT54606': 305,
+  'FT54607': 306,
+  'PR11019': 307,
+  'PR11020': 308,
+  'PR11022': 309,
+  'PR11023': 310,
+  'PR11024': 311,
+  'PR11025': 312,
+  'PR11026': 313,
+  'PR11027': 314,
+  'FT55185': 316,
+  'ND10286': 317,
+  'PR11102': 318,
+  'PR11103': 319,
+  'PR11104': 320,
+  'PR11106': 321,
+  'PR11107': 322,
+  'FT55206': 323,
+  'FT55207': 324,
+  'PR11112': 325,
+  'FT50995': 326,
+  'FT55249': 328,
+  'FT55251': 329,
+  'PR11117': 330,
+  'FT55260': 331,
+  'FT55265': 332,
+  'PR11122': 333,
+  'PR11123': 334,
+  'PR11124': 335,
+  'PR11125': 336,
+  'FT55274': 337,
+  'FT55279': 338,
+  'FT55281': 339,
+  'FT55283': 340,
+  'NP32741': 341,
+  'FT55308': 343,
+  'PR11128': 345,
+  'PR11129': 346,
+  'PR11130': 347,
+  'FR10053': 348,
+  'PR11144': 349,
+  'NP32768': 350,
+  'FT55365': 351,
+  'FT55369': 352,
+  'NP32772': 353,
+  'FT55429': 354,
+  'FT55435': 355,
+  'PR11151': 356,
+  'FT55448': 357,
+  'FT55452': 358,
+  'NP32818': 359,
+  'NP32819': 360,
+  'FT55471': 361,
+  'PR11153': 362,
+  'PR11155': 363,
+  'FT55484': 364,
+  'FT55494': 365,
+  'FT55496': 366,
+  'FT55501': 367,
+  'FT55504': 368,
+  'NP32856': 369,
+  'NP32859': 371,
+  'FT55536': 372,
+  'FT55538': 373,
+  'FT55541': 374,
+  'NP32863': 375,
+  'DS10720': 376,
+  'FT55638': 377,
+  'NP32906': 378,
+  'FT55675': 379,
+  'FT55681': 380,
+  'NP32919': 381,
+  'PR11158': 382,
+  'PR11159': 383,
+  'PR11160': 384,
+  'FT55685': 385,
+  'NP32926': 386,
+  'PR11162': 388,
+  'FT55702': 389,
+  'PR11163': 390,
+  'NP32930': 391,
+  'FT55715': 392,
+  'FT55716': 393,
+  'NP32938': 394,
+  'FT55720': 396,
+  'FT55725': 397,
+  'FT55727': 398,
+  'FT55729': 399,
+  'PR11168': 400,
+  'PR11169': 401,
+  'NP32955': 403,
+  'NP32959': 404,
+  'FT55764': 405,
+  'FT55772': 406,
+  'NP32969': 407,
+  'FT54767': 409,
+  'FT55834': 410,
+  'NP32995': 411,
+  'FT55836': 412,
+  'FT51318': 413,
+  'FT55863': 414,
+  'PR11175': 415,
+  'PR10753': 416,
+  'PR10754': 417,
+  'PR10755': 418,
+  'BD10281': 419,
+  'PR10756': 420,
+  'PR10757': 421,
+  'FT56136': 422,
+  'BD10282': 426,
+  'PD10226': 427,
+  'FT56150': 428,
+  'FT56165': 429,
+  'NP33145': 430,
+  'PR11196': 431,
+  'NP33146': 432,
+  'PR11198': 433,
+  'PR11199': 434,
+  'FT56171': 435,
+  'PR11202': 436,
+  'PR11205': 437,
+  'PR11206': 438,
+  'FT56189': 439,
+  'FT56191': 440,
+  'FT56192': 441,
+  'NP33163': 442,
+  'FT56196': 443,
+  'FT56197': 444,
+  'NP33164': 445,
+  'FT56198': 446,
+  'FT56200': 447,
+  'FT56201': 448,
+  'NP33166': 449,
+  'NP33168': 450,
+  'FT56205': 451,
+  'FT56207': 452,
+  'FT56225': 453,
+  'NP33176': 454,
+  'FT56212': 455,
+  'PR11208': 456,
+  'PR11209': 457,
+  'FT56232': 458,
+  'NP33178': 459,
+  'PR11210': 460,
+  'FT56246': 461,
+  'NP33191': 462,
+  'FT56267': 463,
+  'FT56281': 464,
+  'FT56287': 466,
+  'FR10061': 467,
+  'FT56298': 468,
+  'FT56300': 469,
+  'PR11214': 471,
+  'FT56317': 474,
+  'PR11236': 475,
+  'PR11237': 476,
+  'PR11240': 479,
+  'PR11242': 480,
+  'PR11247': 483,
+  'PR11248': 484,
+  'PR11249': 485,
+  'FT56420': 488,
+  'BD10285': 489,
+  'FT55503': 491,
+  'NP33293': 492,
+  'NP33296': 493,
+  'FT56449': 495,
+  'FT56451': 496,
+  'NP33311': 497,
+  'FT56459': 498,
+  'PR11259': 499,
+  'FT56477': 500,
+  'FT56478': 501,
+  'FT56485': 503,
+  'PR11261': 505,
+  'FT56495': 506,
+  'FT56522': 513,
+  'FT56595': 528,
+  'FT56607': 531,
+  'FT56666': 551,
+  'PR11278': 556,
+  'PR11280': 559,
+  'PR11282': 563,
+  'PR11283': 564,
+  'DS10820': 586,
+  'FT56929': 600,
+  'FT56950': 608,
+  'FT56954': 616,
+  'FT56960': 619,
+  'FT56977': 633,
+  'MD10098': 671,
+  'FT57111': 674,
+  'FT57124': 680,
+  'FT57135': 688,
+  'NP33601': 692,
+  'FT57140': 693,
+  'FT57150': 708,
+  'FT57157': 717,
+  'FT57161': 722,
+  'PR10686': 735,
+  'NP29814': 737,
+  'FT48763': 744,
+  'FT47269': 751,
+  'FT47526': 754,
+  'FT50696': 784,
+  'PR10864': 798,
+  'FT51230': 811,
+  'FT50606': 819,
+  'FT51406': 820,
+  'PR10874': 821,
+  'NP32276': 840,
+  'FT54286': 846,
+  'NP32654': 869,
+  'FT55130': 873,
+  'PR11087': 877,
+  'PR11096': 880,
+  'FT55364': 894,
+  'FT55373': 897,
+  'NP32785': 899,
+  'FT55902': 904,
+  'FT56062': 928,
+  'FT56064': 929,
+  'PR11221': 953,
+  'PR11222': 954,
+  'PR11223': 955,
+  'PR11228': 960,
+  'PR11229': 961,
+  'PR11250': 968,
+  'PR11286': 1003,
+  'FT56969': 1014,
+  'PR11326': 1038,
+  'DS10833': 1040,
+  'FT57011': 1041,
+  'FT57030': 1055,
+  'NP33626': 1059,
+  'FT57128': 1061,
+  'PR11295': 1084,
+  'NP33659': 1086,
+  'PR11340': 1091,
+  'FT50998': 1107,
+  'FT51214': 1117,
+  'FT54151': 1124,
+  'FT54153': 1125,
+  'FT54155': 1126,
+  'NP32260': 1131,
+  'NP32366': 1142,
+  'PD10209': 1148,
+  'FT55546': 1175,
+  'FT56079': 1195,
+  'FT56112': 1201,
+  'FT56329': 1207,
+  'FT56679': 1210,
+  'PR10976': 1212,
+  'NP33463': 1224,
+  'PR11320': 1227,
+  'FT57013': 1233,
+  'FT57192': 1272,
+  'PR11344': 1273,
+  'PR10825': 1277,
+  'FT52160': 1286,
+  'FT52312': 1291,
+  'FT52969': 1305,
+  'FT52991': 1306,
+  'FT53602': 1317,
+  'FT53864': 1324,
+  'FT53939': 1328,
+  'FT54015': 1336,
+  'FT54053': 1338,
+  'FT54146': 1350,
+  'FT54170': 1351,
+  'FT54171': 1352,
+  'FT54636': 1362,
+  'FT54673': 1363,
+  'FT54753': 1372,
+  'FT54856': 1380,
+  'PR11051': 1388,
+  'PR11059': 1390,
+  'PR11132': 1396,
+  'ND10287': 1399,
+  'NP33020': 1409,
+  'FT54334': 1411,
+  'FT56318': 1422,
+  'FT56342': 1430,
+  'FT56365': 1437,
+  'FT56379': 1445,
+  'NP33470': 1464,
+  'FT56799': 1467,
+  'FT56816': 1475,
+  'FT57008': 1494,
+  'ND10293': 1501,
+  'BD10293': 1508,
+  'YD10131': 1510,
+  'FT57065': 1515,
+  'NP33602': 1517,
+  'PR11331': 1521,
+  'FT57071': 1526,
+  'FT57072': 1527,
+  'NP33605': 1530,
+  'NP33609': 1531,
+  'FT57076': 1532,
+  'FT57074': 1533,
+  'NP33608': 1534,
+  'FT57078': 1536,
+  'FT57175': 1539,
+  'NP33661': 1540,
+  'NP33665': 1541,
+  'FT56016': 1543,
+  'NP33668': 1544,
+  'FT57199': 1558,
+  'FT57201': 1562,
+  'FT51486': 1585,
+  'FT51510': 1586,
+  'FT51629': 1590,
+  'FT51965': 1600,
+  'FT52042': 1603,
+  'FT52322': 1610,
+  'FT53099': 1622,
+  'FT53186': 1627,
+  'FT53315': 1629,
+  'NP32018': 1633,
+  'PR10966': 1639,
+  'FT54052': 1650,
+  'FT54138': 1654,
+  'FT55059': 1678,
+  'FT55780': 1696,
+  'FT55847': 1702,
+  'PR11197': 1712,
+  'FT56195': 1716,
+  'NP33196': 1725,
+  'PD10233': 1757,
+  'NP33308': 1758,
+  'FT56567': 1768,
+  'PR11267': 1781,
+  'DS10824': 1816,
+  'NP33535': 1817,
+  'FT56957': 1826,
+  'NP33589': 1832,
+  'FT57086': 1842,
+  'FT57116': 1848,
+  'PR11348': 1851,
+  'FT42429': 1862,
+  'NP30038': 1871,
+  'NP30067': 1873,
+  'FT50363': 1881,
+  'FT50419': 1883,
+  'FT50698': 1885,
+  'FT50731': 1887,
+  'FT51095': 1890,
+  'FT51248': 1893,
+  'FT51525': 1900,
+  'NP32343': 1915,
+  'FT54483': 1917,
+  'FT54613': 1920,
+  'FT56431': 1946,
+  'NP33444': 1954,
+  'PR11297': 1956,
+  'FT57023': 1973,
+  'FT47080': 1997,
+  'FT48373': 2000,
+  'NP30400': 2003,
+  'FT53114': 2020,
+  'FT53365': 2021,
+  'FT53120': 2022,
+  'FT51058': 2024,
+  'FT53540': 2025,
+  'FT53789': 2030,
+  'NP32081': 2031,
+  'NP32515': 2056,
+  'NP32662': 2065,
+  'FT55819': 2072,
+  'FT56319': 2093,
+  'FT56605': 2098,
+  'FT56649': 2104,
+  'FT56934': 2120,
+  'NP33625': 2130,
+  'FT56872': 2136,
+  'FT50904': 2144,
+  'FT50927': 2145,
+  'FT51228': 2148,
+  'FT51473': 2151,
+  'SD10031': 2152,
+  'FT51609': 2154,
+  'FT52288': 2176,
+  'FT53577': 2187,
+  'FT54134': 2199,
+  'FT54738': 2207,
+  'NP32568': 2214,
+  'PR11050': 2218,
+  'FT55724': 2219,
+  'FT55811': 2222,
+  'FT55868': 2224,
+  'NP33161': 2239,
+  'NP33367': 2258,
+  'FT56629': 2260,
+  'FT54093': 2261,
+  'FT56645': 2263,
+  'FT56942': 2281,
+  'NP33276': 2289,
+  'FT56489': 508,
+  'NP33330': 511,
+  'FT56553': 517,
+  'FT56578': 521,
+  'FT56586': 525,
+  'FT56606': 530,
+  'PR11271': 542,
+  'PR11279': 558,
+  'NP33424': 560,
+  'FR10062': 569,
+  'NP33513': 582,
+  'FT56953': 612,
+  'YD10128': 614,
+  'FT56959': 617,
+  'FT56970': 629,
+  'FT56987': 639,
+  'NP33560': 640,
+  'FT57096': 656,
+  'NP31879RA': 691,
+  'FT57142': 697,
+  'NP33645': 711,
+  'NP33648': 714,
+  'NP33651': 721,
+  'PR10678': 732,
+  'PR10682': 733,
+  'FT48351': 743,
+  'NP30056': 757,
+  'PR10816': 769,
+  'FT51004': 793,
+  'FT51196': 810,
+  'NP32292': 849,
+  'NP32295': 850,
+  'NP32298': 852,
+  'FT54308': 854,
+  'FT54488': 864,
+  'FT54520': 865,
+  'NP32774': 896,
+  'NP33029': 905,
+  'NP32769': 908,
+  'FT55985': 909,
+  'PR11187': 914,
+  'PR11188': 915,
+  'FT56046': 922,
+  'FT56056': 926,
+  'NP33126': 938,
+  'PR11230': 962,
+  'NP33416': 981,
+  'FT56684': 983,
+  'FT55793': 986,
+  'PR11289': 1006,
+  'FT56771': 1008,
+  'FT56986': 1022,
+  'PR11322': 1026,
+  'FT57000': 1033,
+  'NP33574': 1044,
+  'BD10291': 1046,
+  'NP33580': 1053,
+  'NP33629': 1057,
+  'FT57125': 1058,
+  'FT57146': 1068,
+  'NP33647': 1072,
+  'PR10830': 1093,
+  'ND10228': 1099,
+  'FT50823': 1101,
+  'MD10071': 1102,
+  'FT51146': 1110,
+  'FT51160': 1111,
+  'FT54164': 1128,
+  'DS10613': 1129,
+  'NP32246': 1130,
+  'FT54395': 1139,
+  'FT55135': 1153,
+  'FT55138': 1154,
+  'FT55463': 1167,
+  'FT55542': 1173,
+  'NP32896': 1179,
+  'FT56730': 1215,
+  'NP33567': 1228,
+  'FT57007': 1231,
+  'FT57032': 1239,
+  'FT57034': 1241,
+  'FT57040': 1243,
+  'DS10848': 1257,
+  'NP33662': 1263,
+  'FT57186': 1268,
+  'PR11343': 1270,
+  'FT52124': 1285,
+  'FT52496': 1296,
+  'NP31820': 1308,
+  'FT52043': 1314,
+  'FT53964': 1329,
+  'FT53994': 1334,
+  'FT54005': 1335,
+  'FT54069': 1344,
+  'FT54145': 1349,
+  'FT54293': 1358,
+  'PR10994': 1360,
+  'FT54714': 1366,
+  'NP32541': 1375,
+  'NP32550': 1377,
+  'NP32755': 1397,
+  'PR11138': 1400,
+  'FT55878': 1403,
+  'FT55881': 1405,
+  'NP33105': 1421,
+  'FT56364': 1436,
+  'DS10805': 1453,
+  'FT56804': 1470,
+  'FT56809': 1471,
+  'FT56811': 1472,
+  'FT56838': 1487,
+  'NP33569': 1491,
+  'PD10238': 1506,
+  'MD10099': 1509,
+  'FT57060': 1514,
+  'FT57182': 1542,
+  'NP33670': 1546,
+  'PR11346': 1554,
+  'PD10239': 1557,
+  'FT50371': 1575,
+  'FT50503': 1576,
+  'FT51954': 1599,
+  'FT52087': 1605,
+  'NP31391': 1606,
+  'FT52412': 1611,
+  'NP31603': 1617,
+  'NP31808': 1624,
+  'FT53671': 1634,
+  'FT52687': 1638,
+  'FT54045': 1648,
+  'FT54048': 1649,
+  'NP32451': 1655,
+  'FT54708': 1658,
+  'FT54834': 1663,
+  'FT52248RA': 1665,
+  'FT54879': 1673,
+  'FT55087': 1679,
+  'PD10217': 1683,
+  'NP32149': 1684,
+  'FT55641': 1687,
+  'NP32936': 1693,
+  'DS10733': 1698,
+  'ND10289': 1699,
+  'FT55850': 1703,
+  'NP33014': 1707,
+  'FT56190': 1713,
+  'FT56286': 1731,
+  'FT44557-4': 1733,
+  'NP33230': 1737,
+  'NP33358': 1766,
+  'FT56594': 1775,
+  'FT56787': 1789,
+  'NP33476': 1794,
+  'FT56813': 1795,
+  'FT56835': 1797,
+  'NP33526': 1811,
+  'NP33539': 1819,
+  'FT56945': 1823,
+  'FT56951': 1824,
+  'FT43519RA2': 1827,
+  'FT57036': 1828,
+  'PR11328': 1837,
+  'NP29341': 1864,
+  'FT49280': 1877,
+  'FT51223': 1892,
+  'FT51311': 1894,
+  'FT51313': 1895,
+  'FT52049': 1912,
+  'YD10119': 1918,
+  'FT55202': 1923,
+  'FT56154': 1939,
+  'FT56173': 1940,
+  'PR11241': 1942,
+  'FT56711': 1950,
+  'FT56823': 1959,
+  'FT56856': 1962,
+  'FT56870': 1964,
+  'FT57066': 1980,
+  'FT57195': 1988,
+  'FT45998': 1996,
+  'FT52891': 2015,
+  'FT52919': 2017,
+  'FT54085': 2041,
+  'FT54658': 2050,
+  'FT54692': 2051,
+  'FT54884': 2057,
+  'FD10148': 2064,
+  'FT55789': 2071,
+  'FT55997': 2082,
+  'FT56214': 2086,
+  'FT56885': 2111,
+  'FT56922': 2118,
+  'FT51973': 2172,
+  'FT53849': 2193,
+  'FT54103': 2198,
+  'FT56140': 2236,
+  'FT56650': 2264,
+  'FT56796': 2266,
+  'FT56859': 2275,
+  'FT57045': 2284,
+  'NP33599': 2287,
+  'FT57061': 2288,
+  'FT57102': 2295,
+  'FT57197': 2301,
+  'FT56490': 507,
+  'FT56583': 523,
+  'FT56591': 527,
+  'NP33401': 540,
+  'FR10063': 571,
+  'FT56869': 575,
+  'NP33510': 577,
+  'FT56895': 583,
+  'FT56897': 584,
+  'FT56900': 585,
+  'FT56916': 593,
+  'PR11310': 596,
+  'FT56797': 598,
+  'PD10235': 613,
+  'FT56961': 621,
+  'FT56974': 632,
+  'FT56988': 641,
+  'PR11319': 646,
+  'NP33617': 658,
+  'NP33618': 660,
+  'FT57105': 665,
+  'NP33622': 673,
+  'NP33640': 700,
+  'DS10843': 715,
+  'PR10677': 731,
+  'FT47845': 739,
+  'FT48171': 740,
+  'PR10739': 746,
+  'FT48316': 758,
+  'FT49682': 762,
+  'PR10815': 768,
+  'FT50523': 778,
+  'ND10244': 805,
+  'FT51148': 806,
+  'FT54148': 823,
+  'FT54158': 828,
+  'FT54452': 860,
+  'FT54588': 867,
+  'FT55128': 871,
+  'PR11086': 876,
+  'FT55301': 888,
+  'PR11141': 891,
+  'PR11154': 902,
+  'FT55892': 903,
+  'PR11189': 917,
+  'FT56082': 934,
+  'FT56085': 935,
+  'PR11225': 957,
+  'PR11232': 964,
+  'PR11233': 965,
+  'PR11235': 967,
+  'PR11251': 969,
+  'NP33413': 979,
+  'FT56683': 982,
+  'NP33427': 988,
+  'FT56731': 992,
+  'PR11285': 1002,
+  'FT56769': 1009,
+  'PR11291': 1011,
+  'FT56966': 1013,
+  'FT57002': 1035,
+  'FT57024': 1049,
+  'FT57026': 1050,
+  'NP33579': 1051,
+  'FT57134': 1064,
+  'NP33646': 1071,
+  'FT57180': 1088,
+  'FT57181': 1089,
+  'NP33666': 1090,
+  'NP30944': 1104,
+  'NP31025': 1108,
+  'FT54297': 1133,
+  'FT54409': 1140,
+  'FT55492': 1168,
+  'FT55545': 1174,
+  'PR11190': 1183,
+  'FT56047': 1187,
+  'PR11276': 1209,
+  'FT56747': 1217,
+  'NP33581': 1236,
+  'DS10847': 1256,
+  'FT51949': 1260,
+  'FT57176': 1261,
+  'PR10824': 1276,
+  'PR10826': 1278,
+  'PR10827': 1279,
+  'FT52201': 1287,
+  'FT52684': 1300,
+  'FT53487': 1313,
+  'PR10973': 1326,
+  'FT53993': 1333,
+  'NP32193': 1341,
+  'FT54076': 1345,
+  'FT54799': 1373,
+  'FT55007': 1386,
+  'PR11058': 1389,
+  'PR11131': 1395,
+  'FT55982': 1416,
+  'PR11258': 1433,
+  'NP33483': 1481,
+  'FT56824': 1484,
+  'DS10829': 1492,
+  'PD10237': 1500,
+  'DS10837': 1502,
+  'ND10294': 1513,
+  'FT55103': 1537,
+  'FT57191': 1549,
+  'FT50071': 1571,
+  'FT50311': 1573,
+  'FT51453': 1580,
+  'PD10186': 1583,
+  'ND10254': 1584,
+  'FT51515': 1587,
+  'FT51712': 1592,
+  'FT51755': 1593,
+  'FT51826': 1595,
+  'FT51968': 1601,
+  'NP31384': 1604,
+  'FT52838': 1621,
+  'NP32021': 1635,
+  'NP32147': 1643,
+  'FT54040': 1647,
+  'NP32457': 1656,
+  'ND10282': 1662,
+  'FT54848': 1667,
+  'FT53812': 1680,
+  'NP32887': 1686,
+  'FT55663': 1688,
+  'FT55703': 1690,
+  'PR11165': 1691,
+  'FT55833': 1700,
+  'FT54804': 1701,
+  'FT55874': 1705,
+  'NP33013': 1706,
+  'FT56146': 1710,
+  'FT56206': 1719,
+  'FT56273': 1726,
+  'NP33240': 1739,
+  'FT56350': 1740,
+  'FT56362': 1742,
+  'NP33253': 1743,
+  'NP33284': 1755,
+  'NP33361': 1770,
+  'NP33362': 1772,
+  'NP33379': 1776,
+  'FT56637': 1777,
+  'FT56795': 1791,
+  'PD10234': 1798,
+  'FT56842': 1799,
+  'NP33496': 1802,
+  'DS10813': 1804,
+  'YD10127': 1809,
+  'FT56940': 1818,
+  'NP33610': 1839,
+  'FT57204': 1856,
+  'NP33675': 1858,
+  'FT37825': 1861,
+  'FT46840': 1865,
+  'FT46798': 1866,
+  'FT47658': 1867,
+  'NP30091': 1874,
+  'NP30270': 1876,
+  'FT49686': 1878,
+  'FT50736': 1888,
+  'FT51631': 1903,
+  'NP31254': 1906,
+  'FT54342': 1914,
+  'PR11013': 1919,
+  'ND10288': 1929,
+  'FT56042': 1935,
+  'NP33434': 1951,
+  'NP33068': 1955,
+  'FT57166': 1077,
+  'NP33485': 1958,
+  'NP33572': 1969,
+  'NP33577': 1972,
+  'FT57172': 1982,
+  'FT49605': 2005,
+  'FT52600': 2012,
+  'FT52966': 2018,
+  'FT53108': 2019,
+  'FT53923': 2035,
+  'FT53961': 2036,
+  'NP30990': 2043,
+  'FT55065': 2062,
+  'FT55757': 2070,
+  'FT55957': 2079,
+  'NP33064': 2080,
+  'FT56194': 2084,
+  'FT56233': 2088,
+  'FT56279': 2090,
+  'FT55951': 2092,
+  'FT56640': 2102,
+  'PR11266': 2103,
+  'FT56883': 2110,
+  'FT56912': 2117,
+  'FT56955': 2122,
+  'FT57095': 2127,
+  'FT57097': 2128,
+  'FT51773': 2158,
+  'NP31307': 2161,
+  'FT51806': 2171,
+  'FT52626': 2177,
+  'NP31589': 2179,
+  'FT52826': 2181,
+  'FT52884': 2182,
+  'BD10272': 2192,
+  'NP32189': 2196,
+  'FT54139': 2201,
+  'FT52347': 2204,
+  'NP32525': 2212,
+  'NP32795': 2220,
+  'NP32782': 2229,
+  'NP33206': 2242,
+  'FT56343': 2245,
+  'NP33151': 2247,
+  'FT56527': 2253,
+  'FT56593': 2256,
+  'FT56786': 2265,
+  'FT56928': 2280,
+  'NP33634': 2299,
+  'FT57136': 2300,
+  'FT56559': 518,
+  'FT56581': 522,
+  'FT56588': 526,
+  'FT56636': 536,
+  'NP33390': 538,
+  'PR11277': 555,
+  'NP33495': 568,
+  'FT56867': 574,
+  'FT56937': 601,
+  'FT56939': 602,
+  'NP33540': 605,
+  'SD10040': 615,
+  'FT56963': 623,
+  'NP33552': 628,
+  'PR11316': 642,
+  'PR11317': 643,
+  'PR11318': 644,
+  'FT57081': 647,
+  'FT57100': 661,
+  'FT56652': 668,
+  'FT57106': 669,
+  'NP33628': 678,
+  'DS10842': 696,
+  'FR10057': 698,
+  'FR10067': 705,
+  'NP33644': 709,
+  'FR10052': 710,
+  'DS10844': 716,
+  'FT57159': 719,
+  'ND10131': 726,
+  'FT46242': 728,
+  'PR10685': 753,
+  'FT47796': 756,
+  'PR10817': 770,
+  'PR10819': 772,
+  'FT50514': 775,
+  'FT50518': 776,
+  'PR10821': 779,
+  'FT50814': 786,
+  'FT51005': 794,
+  'FT51029': 799,
+  'FT51061': 800,
+  'FT51081': 801,
+  'BD10240': 803,
+  'FT51320': 816,
+  'FT51324': 817,
+  'FT51344': 818,
+  'FT54160': 830,
+  'FT54165': 833,
+  'NP32226': 837,
+  'FD10142': 838,
+  'FT54465': 862,
+  'PR11062': 868,
+  'FT55129': 872,
+  'FT55134': 874,
+  'ND10285': 881,
+  'PR11140': 890,
+  'NP32773': 895,
+  'FT56030': 921,
+  'FT56068': 930,
+  'FT56073': 931,
+  'FT56123': 940,
+  'ND10291': 947,
+  'PR11217': 949,
+  'PR11227': 959,
+  'PR11231': 963,
+  'PR11253': 971,
+  'NP33412': 978,
+  'FT56756': 999,
+  'FT56983': 1020,
+  'FT56989': 1023,
+  'MD10097': 1032,
+  'FT57027': 1052,
+  'FT57123': 1056,
+  'FT57164': 1076,
+  'FT57169': 1082,
+  'FT57174': 1085,
+  'PR10831': 1094,
+  'FT50665': 1098,
+  'FT50843': 1103,
+  'FT50901': 1105,
+  'FT51209': 1116,
+  'FT54143': 1122,
+  'FT54157': 1127,
+  'FT54388': 1137,
+  'FT54393': 1138,
+  'FT54581': 1145,
+  'NP32426': 1146,
+  'FR10051': 1151,
+  'NP32658': 1152,
+  'NP32678': 1156,
+  'FT55254': 1160,
+  'FT55526': 1169,
+  'FT55534': 1172,
+  'NP33101': 1188,
+  'PD10224': 1190,
+  'FR10059': 1196,
+  'FT56129': 1202,
+  'NP33134': 1203,
+  'PR11255': 1204,
+  'NP33229': 1206,
+  'FT56663': 1208,
+  'NP33583': 1238,
+  'FT57154': 1248,
+  'DS10846': 1251,
+  'NP33655': 1253,
+  'FT57179': 1264,
+  'FT52311': 1290,
+  'FT52553': 1297,
+  'FT52624': 1298,
+  'FT53276': 1311,
+  'YD10117': 1322,
+  'FT54049': 1337,
+  'FT54250': 1355,
+  'FT54278': 1356,
+  'FT54281': 1357,
+  'FT54826': 1374,
+  'NP32528': 1376,
+  'FT54976': 1384,
+  'FT55098': 1392,
+  'FT55880': 1404,
+  'PR11176': 1407,
+  'FT55890': 1408,
+  'PR11185': 1418,
+  'FT56378': 1444,
+  'NP33457': 1454,
+  'FT56794': 1465,
+  'NP33473': 1466,
+  'NP33478': 1474,
+  'NP33480': 1477,
+  'FT56821': 1480,
+  'FT56833': 1486,
+  'FT57006': 1493,
+  'MD10096': 1495,
+  'BD10292': 1499,
+  'NP33600': 1511,
+  'PR11329': 1519,
+  'NP33669': 1545,
+  'PR11354': 1566,
+  'FT51992': 1602,
+  'FT52208': 1609,
+  'FT53567': 1631,
+  'FT54014': 1646,
+  'NP32494': 1661,
+  'FT54851': 1669,
+  'NP32966': 1695,
+  'NP33169': 1720,
+  'PR11207': 1721,
+  'FT56277': 1728,
+  'FT56307': 1734,
+  'PR11246': 1736,
+  'FT56484': 1762,
+  'NP33364': 1773,
+  'NP33391': 1779,
+  'NP33398': 1782,
+  'FT56814': 1796,
+  'FT56843': 1800,
+  'DS10817': 1807,
+  'FT56952': 1825,
+  'FT57044': 1830,
+  'DS10836': 1831,
+  'DS10838': 1834,
+  'FT57087': 1843,
+  'FT57109': 1845,
+  'FT57198': 1854,
+  'FT57205': 1857,
+  'FT48430': 1875,
+  'FT51097': 1891,
+  'FT51753': 1904,
+  'PR11097': 1922,
+  'NP32723': 1924,
+  'FT55303': 1925,
+  'ND10259': 1927,
+  'NP33491': 1960,
+  'BD10289': 1965,
+  'FT57020': 1970,
+  'FT57047': 1975,
+  'FT57057': 1977,
+  'NP33597': 1978,
+  'PR11339': 1984,
+  'FT45380': 1995,
+  'FT52180': 2008,
+  'FT52729': 2013,
+  'FT52239': 2023,
+  'FT53604': 2026,
+  'NP32197': 2040,
+  'FT54282': 2045,
+  'FT54288': 2046,
+  'NP32611': 2061,
+  'NP32998': 2074,
+  'FT55907': 2076,
+  'FT55919': 2077,
+  'FT56202': 2085,
+  'FT56289': 2091,
+  'FT56599': 2097,
+  'NP33383': 2100,
+  'NP33509': 2107,
+  'FT56898': 2113,
+  'NP33636': 2134,
+  'FT57160': 2139,
+  'PR11338': 2140,
+  'FT50933': 2146,
+  'FT51611': 2155,
+  'FT51626': 2156,
+  'ND10258': 2159,
+  'FT52214': 2175,
+  'FT52806': 2180,
+  'FT53442': 2186,
+  'NP32190': 2195,
+  'FT54695': 2203,
+  'FT54831': 2209,
+  'NP33012': 2225,
+  'PD10227': 2241,
+  'FT56316': 2244,
+  'FT56468': 2252,
+  'FT56536': 2254,
+  'FT56576': 2255,
+  'FT56808': 2268,
+  'NP33479': 2269,
+  'PR11301': 2271,
+  'FT56853': 2273,
+  'NP33598': 2286,
+  'FT56504': 510,
+  'NP33342': 512,
+  'FR10056': 519,
+  'FT56619': 532,
+  'NP33382': 533,
+  'PR11273': 544,
+  'PR11275': 546,
+  'FT56661': 547,
+  'NP33410': 549,
+  'NP33415': 552,
+  'FT56675': 554,
+  'YD10126': 557,
+  'FT56865': 573,
+  'FT56882': 580,
+  'FT56884': 581,
+  'FT56907': 589,
+  'PR11308': 594,
+  'NP33548': 620,
+  'NP33558': 635,
+  'FT56980': 636,
+  'ND10295': 649,
+  'FT57090': 651,
+  'FT57091': 653,
+  'NP33615': 654,
+  'PR11332': 664,
+  'NP33619': 666,
+  'FT57129': 683,
+  'FT56902': 690,
+  'FT57029': 695,
+  'NP33639': 699,
+  'FT57143': 701,
+  'FT57145': 703,
+  'FR10065': 704,
+  'FT57149': 707,
+  'PR11335': 712,
+  'NP33653': 724,
+  'PR10337': 725,
+  'PR10687': 736,
+  'NP30465': 761,
+  'PR10811': 764,
+  'FT50608': 781,
+  'FT50625': 782,
+  'FT50937': 789,
+  'PR10862': 796,
+  'FT51079': 802,
+  'FT51265': 813,
+  'FT54162': 831,
+  'FT54251': 841,
+  'NP32296': 851,
+  'FT54335': 855,
+  'FT54394': 857,
+  'NP32342': 858,
+  'PR11091': 878,
+  'PR11105': 883,
+  'PR11142': 892,
+  'FT56029': 920,
+  'NP33102': 924,
+  'DS10753': 932,
+  'YD10123': 941,
+  'NP33222': 942,
+  'BD10284': 946,
+  'PR11226': 958,
+  'FT56662': 977,
+  'FT56741': 994,
+  'FT56992': 1024,
+  'FT57014': 1042,
+  'NP33638': 1066,
+  'NP33641': 1069,
+  'NP33642': 1070,
+  'FT57163': 1075,
+  'FT57167': 1079,
+  'FT57168': 1081,
+  'ND10249': 1114,
+  'FT51220': 1118,
+  'FT54142': 1121,
+  'FT54280': 1132,
+  'FT54467': 1143,
+  'DS10708': 1162,
+  'FT55379': 1164,
+  'FT55528': 1170,
+  'FT55662': 1181,
+  'NP33087': 1185,
+  'FT56036': 1186,
+  'FT55425': 1197,
+  'FT56719': 1213,
+  'FT56750': 1219,
+  'FT56752': 1220,
+  'FT56557': 1221,
+  'FT56762': 1222,
+  'FT56765': 1223,
+  'DS10827': 1226,
+  'DS10832': 1232,
+  'BD10290': 1234,
+  'NP33584': 1240,
+  'FT57177': 1262,
+  'FT57183': 1266,
+  'PR11345': 1274,
+  'FT52071': 1282,
+  'FT52494': 1295,
+  'NP31811': 1307,
+  'NP31878': 1310,
+  'FT53532': 1315,
+  'FT53684': 1318,
+  'FT53922': 1327,
+  'FT54140': 1348,
+  'FT54205': 1353,
+  'NP32483': 1365,
+  'NP32492': 1368,
+  'FT54741': 1369,
+  'MD10089': 1371,
+  'FT54857': 1381,
+  'PR11060': 1391,
+  'BD10278': 1398,
+  'FT55877': 1402,
+  'FT55883': 1406,
+  'FT55904': 1410,
+  'NP33034': 1413,
+  'FT55572': 1415,
+  'NP33060': 1417,
+  'FT56341': 1428,
+  'FT56351': 1429,
+  'NP33252': 1435,
+  'FT56374': 1442,
+  'FT56753': 1451,
+  'FT56776': 1460,
+  'PR11296': 1461,
+  'PR11299': 1468,
+  'YD10130': 1490,
+  'FT57059': 1512,
+  'PR11330': 1520,
+  'NP33604': 1525,
+  'FT57193': 1550,
+  'FT53035': 1551,
+  'NP33671': 1556,
+  'FT57202': 1561,
+  'PR11353': 1565,
+  'PD10187': 1588,
+  'FT51686': 1591,
+  'FT51906': 1597,
+  'FT52152': 1607,
+  'FT52345': 1612,
+  'FT52473': 1613,
+  'NP31629': 1618,
+  'FT53106': 1623,
+  'NP31846': 1628,
+  'FT53718': 1637,
+  'FT54121': 1653,
+  'NP32481': 1659,
+  'NP32493': 1660,
+  'FT54835': 1664,
+  'FT54840': 1666,
+  'FT54859': 1670,
+  'ND10284': 1675,
+  'FT55329': 1682,
+  'FT55601': 1685,
+  'NP32942': 1694,
+  'FT55889': 1708,
+  'NP33165': 1717,
+  'NP33180': 1722,
+  'PR11212': 1729,
+  'FT56376': 1745,
+  'NP33259': 1746,
+  'FT50138': 1763,
+  'NP33331': 1764,
+  'NP33347': 1765,
+  'FT56574': 1771,
+  'PR11269': 1783,
+  'FT56807': 1793,
+  'NP33527': 1812,
+  'NP33530': 1813,
+  'FT56920': 1814,
+  'FT56944': 1821,
+  'FT57050': 1833,
+  'FT57054': 1835,
+  'NP33673': 1855,
+  'PR11350': 1859,
+  'FT47751': 1868,
+  'FT47860': 1869,
+  'FT48039': 1870,
+  'NP30065': 1872,
+  'FT51342': 1896,
+  'FT51584': 1902,
+  'NP31315': 1909,
+  'FD10152': 1934,
+  'NP33426': 1952,
+  'PR11300': 1957,
+  'FT56861': 1963,
+  'DS10830': 1966,
+  'DS10834': 1968,
+  'FT57038': 1974,
+  'FT57062': 1979,
+  'FT57185': 1985,
+  'FT57188': 1987,
+  'PR10562': 1994,
+  'PD10121': 1999,
+};
 
 // ══════════════════════════════════════════════════════════
 // ETA UPDATER
@@ -741,15 +2829,22 @@ const VENDORS=[
   {id:'eastern',name:'Eastern Mktg',fmt:'PDF',accept:'.pdf'},
   {id:'modernaire',name:'ModernAire',fmt:'Excel',accept:'.xlsx,.xls'},
 ];
+
 let selectedVendor=null,etaVendorData=null,etaHSRows=[];
+
 function buildVendorGrid(){
-  const grid=document.getElementById('vendorGrid');grid.innerHTML='';
+  const grid=document.getElementById('vendorGrid');
+  grid.innerHTML='';
   VENDORS.forEach(v=>{
-    const div=document.createElement('div');div.className='vendor-card';div.id='vc-'+v.id;
+    const div=document.createElement('div');
+    div.className='vendor-card';
+    div.id='vc-'+v.id;
     div.innerHTML='<div class="vc-name">'+v.name+'</div><div class="vc-fmt">'+v.fmt+'</div>';
-    div.onclick=()=>selectVendor(v);grid.appendChild(div);
+    div.onclick=()=>selectVendor(v);
+    grid.appendChild(div);
   });
 }
+
 function selectVendor(v){
   selectedVendor=v;
   document.querySelectorAll('.vendor-card').forEach(c=>c.classList.remove('selected'));
@@ -757,236 +2852,225 @@ function selectVendor(v){
   document.getElementById('etaVendorFile').accept=v.accept;
   document.getElementById('etaVendorZoneSub').textContent=v.fmt+' file';
   document.getElementById('maWeeksRow').style.display=v.id==='modernaire'?'block':'none';
+  // Reset vendor upload
   etaVendorData=null;
   document.getElementById('etaVendorZone').classList.remove('has-file');
   document.getElementById('etaVendorZoneLabel').textContent='Drop vendor report here';
-  document.getElementById('etaVendorStatus').style.display='none';
+  const st=document.getElementById('etaVendorStatus');st.style.display='none';
 }
+
 async function loadEtaVendorFile(inp){
   const file=inp.files[0];if(!file)return;
   if(!selectedVendor){toast('Select a vendor first','error');return;}
   setZoneFile('etaVendorZone','etaVendorZoneLabel',file.name);
   try{
     const ext=file.name.split('.').pop().toLowerCase();
-    if(ext==='pdf'||ext==='html'||ext==='htm'){etaVendorData={text:await readFileText(file),ext};}
-    else{const buf=await readFileArrayBuffer(file);etaVendorData={wb:XLSX.read(buf,{type:'array'}),ext};}
-    const st=document.getElementById('etaVendorStatus');st.style.display='flex';
-    st.innerHTML='<div class="dot dot-ok"></div><span>Vendor report ready</span>';
+    if(ext==='pdf'||ext==='html'||ext==='htm'){
+      etaVendorData={text:await readFileText(file),ext};
+    } else {
+      const buf=await readFileArrayBuffer(file);
+      etaVendorData={wb:XLSX.read(buf,{type:'array'}),ext};
+    }
+    const st=document.getElementById('etaVendorStatus');
+    st.style.display='flex';
+    st.innerHTML='<div class="dot dot-ok"></div><span>Vendor report ready · '+file.name+'</span>';
     toast('Vendor report loaded');
   }catch(e){toast('Load error: '+e.message,'error');}
 }
+
 async function loadEtaHSFile(inp){
   const file=inp.files[0];if(!file)return;
   setZoneFile('etaHSZone','etaHSZoneLabel',file.name);
   try{
-    const text=await readFileText(file);etaHSRows=parseCSV(text);
-    const st=document.getElementById('etaHSStatus');st.style.display='flex';
+    const text=await readFileText(file);
+    etaHSRows=parseCSV(text);
+    const st=document.getElementById('etaHSStatus');
+    st.style.display='flex';
     st.innerHTML='<div class="dot dot-ok"></div><span>'+etaHSRows.length+' Homesource rows loaded</span>';
-    toast('Homesource CSV: '+etaHSRows.length+' rows');
+    toast('Homesource CSV loaded: '+etaHSRows.length+' rows');
   }catch(e){toast('Load error: '+e.message,'error');}
 }
+
 function cleanModel(s){return String(s||'').trim().toUpperCase().replace(/\s+/g,' ');}
-function toDate(v){if(!v)return null;const d=new Date(v);return isNaN(d.getTime())?null:d;}
-function pickEarliest(map,model,d){const m=cleanModel(model);if(!m||!d)return;if(!map[m]||d<map[m])map[m]=d;}
-function resolvePO(rawPO) {
-  // If PO starts with 2 letters, translate via embedded mapping
-  const p = String(rawPO||'').trim().toUpperCase();
-  if (/^[A-Z]{2}/i.test(p)) return poMapping[p] || p;
-  return p;
+function toDate(v){
+  if(!v)return null;
+  const d=new Date(v);return isNaN(d.getTime())?null:d;
+}
+function pickEarliest(map,model,d){
+  const m=cleanModel(model);
+  if(!m||!d)return;
+  if(!map[m]||d<map[m])map[m]=d;
 }
 
 function parseVendorData(){
-  if(!selectedVendor||!etaVendorData)return{etaMap:{},poModelMap:{}};
-  const{wb,text,ext}=etaVendorData;const vid=selectedVendor.id;
-  const etaMap={};      // model -> eta  (fallback)
-  const poModelMap={};  // "newPO::model" -> eta  (primary)
-
-  function addEntry(rawPO, rawModel, eta){
-    if(!rawModel||!eta)return;
-    const model=cleanModel(rawModel);
-    if(!model)return;
-    const newPO=resolvePO(rawPO);
-    // Primary: PO+model key
-    if(newPO){ const k=newPO+'::'+model; if(!poModelMap[k]||eta<poModelMap[k])poModelMap[k]=eta; }
-    // Fallback: model only
-    if(!etaMap[model]||eta<etaMap[model])etaMap[model]=eta;
-  }
-
+  if(!selectedVendor||!etaVendorData)return{};
+  const {wb,text,ext}=etaVendorData;
+  const vid=selectedVendor.id;
+  const map={};
   try{
-    if(vid==='ge'){xlsxToRows(wb).forEach(r=>addEntry(r['PO Number']||r['Customer PO']||r['PO'],r['Product #'],toDate(r['Target Arrival Date'])));}
-    else if(vid==='lg'){xlsxToRows(wb).forEach(r=>{if(/invoiced|shipped/i.test(r['Status']||''))return;addEntry(r['PO']||r['Customer PO']||r['Purchase Order'],r['Model'],toDate(r['ETA']));});}
-    else if(vid==='whirlpool'){wb.SheetNames.forEach(s=>{xlsxToRows(wb,s).forEach(r=>addEntry(r['PO NUMBER']||r['CUSTOMER PO']||r['PURCH ORDER'],r['MATERIAL'],toDate(r['TRGT DLVY DATE'])));});}
-    else if(vid==='subzero'){wb.SheetNames.forEach(s=>{xlsxToRows(wb,s).forEach(r=>addEntry(r['Purchase Order']||r['Customer PO']||r['PO'],r['Item'],toDate(r['Estimated Available Date'])));});}
-    else if(vid==='almo'){xlsxToRows(wb).forEach(r=>{const c={};Object.keys(r).forEach(k=>c[k.trim()]=r[k]);if(String(c['Status']).trim()==='B/O')return;addEntry(c['Customer PO']||c['PO Number']||c['PO'],c['Item'],toDate(c['Scheduled Ship Date']));});}
-    else if(vid==='electrolux'){xlsxToRows(wb).forEach(r=>{const c={};Object.keys(r).forEach(k=>c[k.trim()]=r[k]);addEntry(c['Customer PO']||c['Purchase Order'],c['Material Id'],toDate(c['Estimated Delivery Planned Goods Movement Dt']));});}
-    else if(vid==='fnp'||vid==='fp'){
-      const doc=(new DOMParser()).parseFromString(text,'text/html');
-      doc.querySelectorAll('tr').forEach(tr=>{
-        const tds=[...tr.querySelectorAll('td')].map(td=>td.textContent.trim());if(tds.length<2)return;
-        const dateIdx=tds.findIndex(t=>/\d{1,2}\/\d{1,2}\/\d{4}/.test(t));if(dateIdx<0)return;
-        const modelIdx=vid==='fp'?0:tds.findIndex((t,i)=>i!==dateIdx&&/^[A-Z0-9]{4,}/i.test(t));if(modelIdx<0)return;
-        addEntry(null,tds[modelIdx],toDate(tds[dateIdx]));
+    if(vid==='ge'){
+      const rows=xlsxToRows(wb);
+      rows.forEach(r=>pickEarliest(map,r['Product #'],toDate(r['Target Arrival Date'])));
+    } else if(vid==='lg'){
+      const rows=xlsxToRows(wb);
+      rows.forEach(r=>{
+        if(/invoiced|shipped/i.test(r['Status']||''))return;
+        pickEarliest(map,r['Model'],toDate(r['ETA']));
       });
-    }
-    else if(vid==='modernaire'){
+    } else if(vid==='whirlpool'){
+      wb.SheetNames.forEach(s=>{
+        xlsxToRows(wb,s).forEach(r=>pickEarliest(map,r['MATERIAL'],toDate(r['TRGT DLVY DATE'])));
+      });
+    } else if(vid==='subzero'){
+      wb.SheetNames.forEach(s=>{
+        xlsxToRows(wb,s).forEach(r=>pickEarliest(map,r['Item'],toDate(r['Estimated Available Date'])));
+      });
+    } else if(vid==='almo'){
+      const rows=xlsxToRows(wb);
+      rows.forEach(r=>{
+        const cleaned={};Object.keys(r).forEach(k=>cleaned[k.trim()]=r[k]);
+        if(String(cleaned['Status']).trim()==='B/O')return;
+        pickEarliest(map,cleaned['Item'],toDate(cleaned['Scheduled Ship Date']));
+      });
+    } else if(vid==='electrolux'){
+      const rows=xlsxToRows(wb);
+      rows.forEach(r=>{
+        const cleaned={};Object.keys(r).forEach(k=>cleaned[k.trim()]=r[k]);
+        pickEarliest(map,cleaned['Material Id'],toDate(cleaned['Estimated Delivery Planned Goods Movement Dt']));
+      });
+    } else if(vid==='fnp'||vid==='fp'){
+      // HTML parsing - look for table rows with model and date
+      const parser=new DOMParser();
+      const doc=parser.parseFromString(text,'text/html');
+      const rows=doc.querySelectorAll('tr');
+      rows.forEach(tr=>{
+        const tds=[...tr.querySelectorAll('td')].map(td=>td.textContent.trim());
+        if(tds.length<2)return;
+        // Try to find a date and a model number
+        const dateIdx=tds.findIndex(t=>/\d{1,2}\/\d{1,2}\/\d{4}/.test(t));
+        if(dateIdx<0)return;
+        const modelIdx=vid==='fp'?0:tds.findIndex((t,i)=>i!==dateIdx&&/^[A-Z0-9]{4,}/i.test(t));
+        if(modelIdx<0)return;
+        pickEarliest(map,tds[modelIdx],toDate(tds[dateIdx]));
+      });
+    } else if(vid==='modernaire'){
       const weeks=parseInt(document.getElementById('maWeeks').value)||4;
       const eta=addDays(new Date(),weeks*7);
-      xlsxToRows(wb).forEach(r=>{const c={};Object.keys(r).forEach(k=>c[k.trim()]=r[k]);const m=cleanModel(c['Model']);if(m){etaMap[m]=eta;}});
-    }
-    else if(vid==='eastern'){
-      const lines=(text||'').split('\n');const dtRx=/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
-      lines.forEach((ln,i)=>{if(ln.trim().length===7){for(let j=i+1;j<Math.min(i+5,lines.length);j++){const pts=lines[j].trim().split(/\s+/);if(pts.length>=2&&dtRx.test(pts[0])){addEntry(null,pts[1],toDate(pts[0]));break;}}}});
+      const rows=xlsxToRows(wb);
+      rows.forEach(r=>{
+        const cleaned={};Object.keys(r).forEach(k=>cleaned[k.trim()]=r[k]);
+        const m=cleanModel(cleaned['Model']);
+        if(m)map[m]=eta;
+      });
+    } else if(vid==='eastern'){
+      // PDF - text parsing
+      const lines=(text||'').split('\n');
+      const dtRx=/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+      lines.forEach((ln,i)=>{
+        if(ln.trim().length===7){
+          for(let j=i+1;j<Math.min(i+5,lines.length);j++){
+            const pts=lines[j].trim().split(/\s+/);
+            if(pts.length>=2&&dtRx.test(pts[0])){
+              pickEarliest(map,pts[1],toDate(pts[0]));break;
+            }
+          }
+        }
+      });
     }
   }catch(e){toast('Parse error: '+e.message,'error');}
-  return {etaMap, poModelMap};
-}
-// PO MAPPING DATA (hard-coded from Source sheet)
-const DEFAULT_PO_MAPPING = {"PR10744":"256","PR10745":"257","PR10746":"258","PR10747":"259","PR10748":"260","PR10749":"261","PR10750":"262","PR10751":"263","PR10752":"264","PR10761":"265","PR10762":"266","PR10763":"267","PR10764":"268","PR10765":"269","DR10006":"270","DR10007":"271","DR10008":"272","DR10009":"273","NP30637":"274","NP30699":"275","FT50242":"276","FT50442":"277","PR10743":"278","FT50489":"279","PR10806":"280","PR10807":"281","PR10808":"282","PR10809":"283","FT54389":"284","FT50140":"285","FT54415":"286","FD10145":"287","NP32359":"288","FT54441":"289","FT54443":"290","FT54445":"291","FT54453":"292","FT54455":"293","NP32371":"294","FT54464":"295","NP32375":"296","NP32407":"297","FT54549":"298","NP32412":"299","FT54594":"300","PR11008":"301","PR11009":"302","PR11014":"303","PR11015":"304","FT54606":"305","FT54607":"306","PR11019":"307","PR11020":"308","PR11022":"309","PR11023":"310","PR11024":"311","PR11025":"312","PR11026":"313","PR11027":"314","PR11098":"315","FT55185":"316","ND10286":"317","PR11102":"318","PR11103":"319","PR11104":"320","PR11106":"321","PR11107":"322","FT55206":"323","FT55207":"324","PR11112":"325","FT50995":"326","FT51966":"327","FT55249":"328","FT55251":"329","PR11117":"330","FT55260":"331","FT55265":"332","PR11122":"333","PR11123":"334","PR11124":"335","PR11125":"336","FT55274":"337","FT55279":"338","FT55281":"339","FT55283":"340","NP32741":"341","NP32745":"342","FT55308":"343","PR11127":"344","PR11128":"345","PR11129":"346","PR11130":"347","FR10053":"348","PR11144":"349","NP32768":"350","FT55365":"351","FT55369":"352","NP32772":"353","FT55429":"354","FT55435":"355","PR11151":"356","FT55448":"357","FT55452":"358","NP32818":"359","NP32819":"360","FT55471":"361","PR11153":"362","PR11155":"363","FT55484":"364","FT55494":"365","FT55496":"366","FT55501":"367","FT55504":"368","NP32856":"369","FT55535":"370","NP32859":"371","FT55536":"372","FT55538":"373","FT55541":"374","NP32863":"375","DS10720":"376","FT55638":"377","NP32906":"378","FT55675":"379","FT55681":"380","NP32919":"381","PR11158":"382","PR11159":"383","PR11160":"384","FT55685":"385","NP32926":"386","PR11161":"387","PR11162":"388","FT55702":"389","PR11163":"390","NP32930":"391","FT55715":"392","FT55716":"393","NP32938":"394","NP32939":"395","FT55720":"396","FT55725":"397","FT55727":"398","FT55729":"399","PR11168":"400","PR11169":"401","PR11170":"402","NP32955":"403","NP32959":"404","FT55764":"405","FT55772":"406","NP32969":"407","NP32973":"408","FT54767":"409","FT55834":"410","NP32995":"411","FT55836":"412","FT51318":"413","FT55863":"414","PR11175":"415","PR10753":"416","PR10754":"417","PR10755":"418","BD10281":"419","PR10756":"420","PR10757":"421","FT56136":"422","PR10758":"423","PR10759":"424","PR10760":"425","BD10282":"426","PD10226":"427","FT56150":"428","FT56165":"429","NP33145":"430","PR11196":"431","NP33146":"432","PR11198":"433","PR11199":"434","FT56171":"435","PR11202":"436","PR11205":"437","PR11206":"438","FT56189":"439","FT56191":"440","FT56192":"441","NP33163":"442","FT56196":"443","FT56197":"444","NP33164":"445","FT56198":"446","FT56200":"447","FT56201":"448","NP33166":"449","NP33168":"450","FT56205":"451","FT56207":"452","FT56225":"453","NP33176":"454","FT56212":"455","PR11208":"456","PR11209":"457","FT56232":"458","NP33178":"459","PR11210":"460","FT56246":"461","NP33191":"462","FT56267":"463","FT56281":"464","FT56284":"465","FT56287":"466","FR10061":"467","FT56298":"468","FT56300":"469","PR11213":"470","PR11214":"471","PR11215":"472","FT56310":"473","FT56317":"474","PR11236":"475","PR11237":"476","PR11238":"477","PR11239":"478","PR11240":"479","PR11242":"480","PR11244":"481","PR11245":"482","PR11247":"483","PR11248":"484","PR11249":"485","FD10153":"486","PD10232":"487","FT56420":"488","BD10285":"489","FT56425":"490","FT55503":"491","NP33293":"492","NP33296":"493","NP33306":"494","FT56449":"495","FT56451":"496","NP33311":"497","FT56459":"498","PR11259":"499","FT56477":"500","FT56478":"501","FT56345":"502","FT56485":"503","NP33324":"504","PR11261":"505","FT56495":"506","FT56490":"507","FT56489":"508","FT56496":"509","FT56504":"510","NP33330":"511","NP33342":"512","FT56522":"513","PR11262":"514","FT56538":"515","FT56551":"516","FT56553":"517","FT56559":"518","FR10056":"519","FT56577":"520","FT56578":"521","FT56581":"522","FT56583":"523","FT53614":"524","FT56586":"525","FT56588":"526","FT56591":"527","FT56595":"528","FT56600":"529","FT56606":"530","FT56607":"531","FT56619":"532","NP33382":"533","FT56624":"534","NP33384":"535","FT56636":"536","FT56638":"537","NP33390":"538","NP33394":"539","NP33401":"540","PR11268":"541","PR11271":"542","PR11272":"543","PR11273":"544","PR11274":"545","PR11275":"546","FT56661":"547","NP33409":"548","NP33410":"549","FT56665":"550","FT56666":"551","NP33415":"552","FT56117":"553","FT56675":"554","PR11277":"555","PR11278":"556","YD10126":"557","PR11279":"558","PR11280":"559","NP33424":"560","FT56688":"561","FT56555":"562","PR11282":"563","PR11283":"564","FT56695":"565","FT56847":"566","FT56846":"567","NP33495":"568","FR10062":"569","FT56858":"570","FR10063":"571","NP33501":"572","FT56865":"573","FT56867":"574","FT56869":"575","FT56877":"576","NP33510":"577","FT56881":"578","PR11303":"579","FT56882":"580","FT56884":"581","NP33513":"582","FT56895":"583","FT56897":"584","FT56900":"585","DS10820":"586","PR11307":"587","FT56905":"588","FT56907":"589","FT56908":"590","NP33531":"591","FT56913":"592","FT56916":"593","PR11308":"594","PR11309":"595","PR11310":"596","PR11311":"597","FT56797":"598","FT56932":"599","FT56929":"600","FT56937":"601","FT56939":"602","FT56941":"603","FT56943":"604","NP33540":"605","FT56946":"606","BD10288":"607","FT56950":"608","NP33542":"609","FD10155":"610","NP33544":"611","FT56953":"612","PD10235":"613","YD10128":"614","SD10040":"615","FT56954":"616","FT56959":"617","NP33547":"618","FT56960":"619","NP33548":"620","FT56961":"621","NP33549":"622","FT56963":"623","FT56965":"624","NP33550":"625","FT56967":"626","FT56968":"627","NP33552":"628","FT56970":"629","FT56972":"630","NP33554":"631","FT56974":"632","FT56977":"633","NP33557":"634","NP33558":"635","FT56980":"636","NP33559":"637","FT56070":"638","FT56987":"639","NP33560":"640","FT56988":"641","PR11316":"642","PR11317":"643","PR11318":"644","FT56991":"645","PR11319":"646","FT57081":"647","FT57084":"648","ND10295":"649","FT57089":"650","FT57090":"651","NP33613":"652","FT57091":"653","NP33615":"654","NP33616":"655","FT57096":"656","FT57098":"657","NP33617":"658","FT57099":"659","NP33618":"660","FT57100":"661","FT57101":"662","PR11333":"663","PR11332":"664","FT57105":"665","NP33619":"666","FT56740":"667","FT56652":"668","FT57106":"669","FT57107":"670","MD10098":"671","FT57108":"672","NP33622":"673","FT57111":"674","FT57113":"675","FT57117":"676","NP33627":"677","NP33628":"678","PR11334":"679","FT57124":"680","FT57126":"681","NP33632":"682","FT57129":"683","FT57130":"684","FT57127":"685","FT57132":"686","NP33635":"687","FT57135":"688","FT57137":"689","FT56902":"690","NP31879RA":"691","NP33601":"692","FT57140":"693","FT57141":"694","FT57029":"695","DS10842":"696","FT57142":"697","FR10057":"698","NP33639":"699","NP33640":"700","FT57143":"701","FT57144":"702","FT57145":"703","FR10065":"704","FR10067":"705","NP33516":"706","FT57149":"707","FT57150":"708","NP33644":"709","FR10052":"710","NP33645":"711","PR11335":"712","ND10297":"713","NP33648":"714","DS10843":"715","DS10844":"716","FT57157":"717","FT57158":"718","FT57159":"719","NP33652":"720","NP33651":"721","FT57161":"722","FT57162":"723","NP33653":"724","PR10337":"725","ND10131":"726","BD10139":"727","FT46242":"728","PR10674":"729","PR10675":"730","PR10677":"731","PR10678":"732","PR10682":"733","PR10683":"734","PR10686":"735","PR10687":"736","NP29814":"737","FT47549":"738","FT47845":"739","FT48171":"740","NP30059":"741","NP30076":"742","FT48351":"743","FT48763":"744","FT48965":"745","PR10739":"746","PR10740":"747","PR10741":"748","PR10742":"749","PR10409":"750","FT47269":"751","PR10684":"752","PR10685":"753","FT47526":"754","ND10182":"755","FT47796":"756","NP30056":"757","FT48316":"758","FT48623":"759","NP30257":"760","NP30465":"761","FT49682":"762","PR10810":"763","PR10811":"764","PR10812":"765","PR10813":"766","PR10814":"767","PR10815":"768","PR10816":"769","PR10817":"770","PR10818":"771","PR10819":"772","PR10820":"773","FT50513":"774","FT50514":"775","FT50518":"776","FT50520":"777","FT50523":"778","PR10821":"779","PR10822":"780","FT50608":"781","FT50625":"782","FT50666":"783","FT50696":"784","FT50728":"785","FT50814":"786","PD10169":"787","FT50928":"788","FT50937":"789","NP30969":"790","FT50959":"791","FT51002":"792","FT51004":"793","FT51005":"794","NP30989":"795","PR10862":"796","PR10863":"797","PR10864":"798","FT51029":"799","FT51061":"800","FT51081":"801","FT51079":"802","BD10240":"803","PD10175":"804","ND10244":"805","FT51148":"806","FT51163":"807","PD10177":"808","ND10245":"809","FT51196":"810","FT51230":"811","FT51241":"812","FT51265":"813","FT51272":"814","NP31091":"815","FT51320":"816","FT51324":"817","FT51344":"818","FT50606":"819","FT51406":"820","PR10874":"821","PR10875":"822","FT54148":"823","FT54150":"824","FT54152":"825","FT54154":"826","FT54156":"827","FT54158":"828","FT54159":"829","FT54160":"830","FT54162":"831","FT54163":"832","FT54165":"833","FT54168":"834","FT54169":"835","NP32225":"836","NP32226":"837","FD10142":"838","NP32240":"839","NP32276":"840","FT54251":"841","FT54252":"842","FT54259":"843","NP32284":"844","NP32288":"845","FT54286":"846","FT54296":"847","FT54299":"848","NP32292":"849","NP32295":"850","NP32296":"851","NP32298":"852","FT54307":"853","FT54308":"854","FT54335":"855","FT54365":"856","FT54394":"857","NP32342":"858","FT54424":"859","FT54452":"860","FT54454":"861","FT54465":"862","FT54477":"863","FT54488":"864","FT54520":"865","FT54558":"866","FT54588":"867","PR11062":"868","NP32654":"869","FT55127":"870","FT55128":"871","FT55129":"872","FT55130":"873","FT55134":"874","FT55143":"875","PR11086":"876","PR11087":"877","PR11091":"878","PR11092":"879","PR11096":"880","ND10285":"881","NP32689":"882","PR11105":"883","FT55204":"884","FT55149":"885","FR10048":"886","FT55225":"887","FT55301":"888","PR11139":"889","PR11140":"890","PR11141":"891","PR11142":"892","PR11143":"893","FT55364":"894","NP32773":"895","NP32774":"896","FT55373":"897","FT55397":"898","NP32785":"899","NP32800":"900","FT55464":"901","PR11154":"902","FT55892":"903","FT55902":"904","NP33029":"905","NP33035":"906","FT55945":"907","NP32769":"908","FT55985":"909","FT52803":"910","PR11183":"911","PR11184":"912","PR11186":"913","PR11187":"914","PR11188":"915","FT56008":"916","PR11189":"917","NP33077":"918","NP33083":"919","FT56029":"920","FT56030":"921","FT56046":"922","FT56053":"923","NP33102":"924","FT56057":"925","FT56056":"926","NP33107":"927","FT56062":"928","FT56064":"929","FT56068":"930","FT56073":"931","DS10753":"932","FT56083":"933","FT56082":"934","FT56085":"935","NP33117":"936","FT56093":"937","NP33126":"938","FT56109":"939","FT56123":"940","YD10123":"941","NP33222":"942","NP33223":"943","FT56322":"944","NP33225":"945","BD10284":"946","ND10291":"947","PR11216":"948","PR11217":"949","PR11218":"950","PR11219":"951","PR11220":"952","PR11221":"953","PR11222":"954","PR11223":"955","PR11224":"956","PR11225":"957","PR11226":"958","PR11227":"959","PR11228":"960","PR11229":"961","PR11230":"962","PR11231":"963","PR11232":"964","PR11233":"965","PR11234":"966","PR11235":"967","PR11250":"968","PR11251":"969","PR11252":"970","PR11253":"971","PR11254":"972","FT56659":"973","NP33407":"974","FT56660":"975","NP33408":"976","FT56662":"977","NP33412":"978","NP33413":"979","FT56668":"980","NP33416":"981","FT56683":"982","FT56684":"983","FT56694":"984","FT56708":"985","FT55793":"986","FT56690":"987","NP33427":"988","NP33437":"989","FT56726":"990","NP33441":"991","FT56731":"992","SD10038":"993","FT56741":"994","NP33448":"995","NP33449":"996","NP33453":"997","FT56751":"998","FT56756":"999","FT56757":"1000","FT56761":"1001","PR11285":"1002","PR11286":"1003","PR11287":"1004","PR11288":"1005","PR11289":"1006","PR11290":"1007","FT56771":"1008","FT56769":"1009","FT56775":"1010","PR11291":"1011","YD10129":"1012","FT56966":"1013","FT56969":"1014","NP33551":"1015","FT56971":"1016","NP33553":"1017","FT56978":"1018","FT56979":"1019","FT56983":"1020","FT56984":"1021","FT56986":"1022","FT56989":"1023","FT56992":"1024","PR11321":"1025","PR11322":"1026","PR11323":"1027","NP33565":"1028","PR11324":"1029","FT56994":"1030","FT56993":"1031","MD10097":"1032","FT57000":"1033","FT56998":"1034","FT57002":"1035","FT56996":"1036","PR11325":"1037","PR11326":"1038","FT57005":"1039","DS10833":"1040","FT57011":"1041","FT57014":"1042","FT57015":"1043","NP33574":"1044","FT57019":"1045","BD10291":"1046","PD10236":"1047","FT57022":"1048","FT57024":"1049","FT57026":"1050","NP33579":"1051","FT57027":"1052","NP33580":"1053","FT57028":"1054","FT57030":"1055","FT57123":"1056","NP33629":"1057","FT57125":"1058","NP33626":"1059","NP33630":"1060","FT57128":"1061","NP33633":"1062","FT57131":"1063","FT57134":"1064","FT57139":"1065","NP33638":"1066","FR10066":"1067","FT57146":"1068","NP33641":"1069","NP33642":"1070","NP33646":"1071","NP33647":"1072","FT57153":"1073","NP33650":"1074","FT57163":"1075","FT57164":"1076","FT57166":"1077","PR11336":"1078","FT57167":"1079","NP33656":"1080","FT57168":"1081","FT57169":"1082","NP33658":"1083","PR11295":"1084","FT57174":"1085","NP33659":"1086","NP33664":"1087","FT57180":"1088","FT57181":"1089","NP33666":"1090","PR11340":"1091","PR10829":"1092","PR10830":"1093","PR10831":"1094","NP30817":"1095","FT50647":"1096","FT50653":"1097","FT50665":"1098","ND10228":"1099","NP30901":"1100","FT50823":"1101","MD10071":"1102","FT50843":"1103","NP30944":"1104","FT50901":"1105","DR10005":"1106","FT50998":"1107","NP31025":"1108","FT51117":"1109","FT51146":"1110","FT51160":"1111","FT51175":"1112","BD10243":"1113","ND10249":"1114","NP31057":"1115","FT51209":"1116","FT51214":"1117","FT51220":"1118","FT51315":"1119","FT51316":"1120","FT54142":"1121","FT54143":"1122","FT54147":"1123","FT54151":"1124","FT54153":"1125","FT54155":"1126","FT54157":"1127","FT54164":"1128","DS10613":"1129","NP32246":"1130","NP32260":"1131","FT54280":"1132","FT54297":"1133","FT54305":"1134","FT54322":"1135","NP32309":"1136","FT54388":"1137","FT54393":"1138","FT54395":"1139","FT54409":"1140","FT54414":"1141","NP32366":"1142","FT54467":"1143","FT54517":"1144","FT54581":"1145","NP32426":"1146","BD10274":"1147","PD10209":"1148","FT54612":"1149","FT55099":"1150","FR10051":"1151","NP32658":"1152","FT55135":"1153","FT55138":"1154","FT55147":"1155","NP32678":"1156","NP32681":"1157","NP32694":"1158","NP32701":"1159","FT55254":"1160","FT55282":"1161","DS10708":"1162","FT55363":"1163","FT55379":"1164","FT55418":"1165","FT55362":"1166","FT55463":"1167","FT55492":"1168","FT55526":"1169","FT55528":"1170","NP32857":"1171","FT55534":"1172","FT55542":"1173","FT55545":"1174","FT55546":"1175","FT54665":"1176","FT55561":"1177","FT55570":"1178","NP32896":"1179","FT55658":"1180","FT55662":"1181","DS10724":"1182","PR11190":"1183","NP33085":"1184","NP33087":"1185","FT56036":"1186","FT56047":"1187","NP33101":"1188","NP33104":"1189","PD10224":"1190","FT56067":"1191","NP33110":"1192","NP33112":"1193","NP33113":"1194","FT56079":"1195","FR10059":"1196","FT55425":"1197","FT55968":"1198","FT52315":"1199","FT56094":"1200","FT56112":"1201","FT56129":"1202","NP33134":"1203","PR11255":"1204","FT56325":"1205","NP33229":"1206","FT56329":"1207","FT56663":"1208","PR11276":"1209","FT56679":"1210","FT56681":"1211","PR10976":"1212","FT56719":"1213","PR11284":"1214","FT56730":"1215","NP33446":"1216","FT56747":"1217","FT56745":"1218","FT56750":"1219","FT56752":"1220","FT56557":"1221","FT56762":"1222","FT56765":"1223","NP33463":"1224","FT56975":"1225","DS10827":"1226","PR11320":"1227","NP33567":"1228","FT57001":"1229","FT57004":"1230","FT57007":"1231","DS10832":"1232","FT57013":"1233","BD10290":"1234","NP33573":"1235","NP33581":"1236","FT57031":"1237","NP33583":"1238","FT57032":"1239","NP33584":"1240","FT57034":"1241","NP33586":"1242","FT57040":"1243","FT57041":"1244","FT57039":"1245","PR11327":"1246","FT57148":"1247","FT57154":"1248","FT57155":"1249","NP33649":"1250","DS10846":"1251","NP33654":"1252","NP33655":"1253","FT57165":"1254","PR11337":"1255","DS10847":"1256","DS10848":"1257","NP33657":"1258","FT57171":"1259","FT51949":"1260","FT57176":"1261","FT57177":"1262","NP33662":"1263","FT57179":"1264","FT57178":"1265","FT57183":"1266","NP33663":"1267","FT57186":"1268","PR11342":"1269","PR11343":"1270","FT57190":"1271","FT57192":"1272","PR11344":"1273","PR11345":"1274","PR10823":"1275","PR10824":"1276","PR10825":"1277","PR10826":"1278","PR10827":"1279","PR10828":"1280","FT50512":"1281","FT52071":"1282","FT52084":"1283","FT52064":"1284","FT52124":"1285","FT52160":"1286","FT52201":"1287","FT52238":"1288","FT52285":"1289","FT52311":"1290","FT52312":"1291","FT52350":"1292","FT52408":"1293","NP31526":"1294","FT52494":"1295","FT52496":"1296","FT52553":"1297","FT52624":"1298","NP30641":"1299","FT52684":"1300","FT52720":"1301","FT52755":"1302","FT52831":"1303","FT52850":"1304","FT52969":"1305","FT52991":"1306","NP31811":"1307","NP31820":"1308","FT53216":"1309","NP31878":"1310","FT53276":"1311","FT53386":"1312","FT53487":"1313","FT52043":"1314","FT53532":"1315","FT53597":"1316","FT53602":"1317","FT53684":"1318","FT44573-4":"1319","NP32054":"1320","PR10964":"1321","YD10117":"1322","FT53836":"1323","FT53864":"1324","FT53911":"1325","PR10973":"1326","FT53922":"1327","FT53939":"1328","FT53964":"1329","FT53969":"1330","FT53975":"1331","FT53990":"1332","FT53993":"1333","FT53994":"1334","FT54005":"1335","FT54015":"1336","FT54049":"1337","FT54053":"1338","FT54056":"1339","FT54061":"1340","NP32193":"1341","FT54064":"1342","FT54066":"1343","FT54069":"1344","FT54076":"1345","NP32198":"1346","FT54084":"1347","FT54140":"1348","FT54145":"1349","FT54146":"1350","FT54170":"1351","FT54171":"1352","FT54205":"1353","NP32245":"1354","FT54250":"1355","FT54278":"1356","FT54281":"1357","FT54293":"1358","FT54295":"1359","PR10994":"1360","FT54357":"1361","FT54636":"1362","FT54673":"1363","FT54704":"1364","NP32483":"1365","FT54714":"1366","NP32490":"1367","NP32492":"1368","FT54741":"1369","NP32496":"1370","MD10089":"1371","FT54753":"1372","FT54799":"1373","FT54826":"1374","NP32541":"1375","NP32528":"1376","NP32550":"1377","PR11037":"1378","NP32553":"1379","FT54856":"1380","FT54857":"1381","FT54889":"1382","FT54947":"1383","FT54976":"1384","FT55004":"1385","FT55007":"1386","FT55022":"1387","PR11051":"1388","PR11058":"1389","PR11059":"1390","PR11060":"1391","FT55098":"1392","FT55106":"1393","NP32661":"1394","PR11131":"1395","PR11132":"1396","NP32755":"1397","BD10278":"1398","ND10287":"1399","PR11138":"1400","DS10740":"1401","FT55877":"1402","FT55878":"1403","FT55880":"1404","FT55881":"1405","FT55883":"1406","PR11176":"1407","FT55890":"1408","NP33020":"1409","FT55904":"1410","FT54334":"1411","NP33032":"1412","NP33034":"1413","NP33042":"1414","FT55572":"1415","FT55982":"1416","NP33060":"1417","PR11185":"1418","FT56026":"1419","NP33099":"1420","NP33105":"1421","FT56318":"1422","PD10230":"1423","FT56323":"1424","BD10283":"1425","FT56332":"1426","NP33239":"1427","FT56341":"1428","FT56351":"1429","FT56342":"1430","NP33241":"1431","PR11256":"1432","PR11258":"1433","FT56361":"1434","NP33252":"1435","FT56364":"1436","FT56365":"1437","FT56366":"1438","FT56367":"1439","FT56368":"1440","PD10231":"1441","FT56374":"1442","FT56377":"1443","FT56378":"1444","FT56379":"1445","FT56386":"1446","YD10125":"1447","SD10037":"1448","FT56738":"1449","FT53488":"1450","FT56753":"1451","FT52147":"1452","DS10805":"1453","NP33457":"1454","NP33462":"1455","NP33366":"1456","PR11292":"1457","PR11293":"1458","PR11294":"1459","FT56776":"1460","PR11296":"1461","FT56781":"1462","FT56789":"1463","NP33470":"1464","FT56794":"1465","NP33473":"1466","FT56799":"1467","PR11299":"1468","FT56802":"1469","FT56804":"1470","FT56809":"1471","FT56811":"1472","FT56815":"1473","NP33478":"1474","FT56816":"1475","FT56817":"1476","NP33480":"1477","FT56819":"1478","FT56820":"1479","FT56821":"1480","NP33483":"1481","FT56822":"1482","NP33486":"1483","FT56824":"1484","NP33487":"1485","FT56833":"1486","FT56838":"1487","NP33494":"1488","FT56844":"1489","YD10130":"1490","NP33569":"1491","DS10829":"1492","FT57006":"1493","FT57008":"1494","MD10096":"1495","FT57025":"1496","NP33585":"1497","FT57035":"1498","BD10292":"1499","PD10237":"1500","ND10293":"1501","DS10837":"1502","FT57046":"1503","FT57049":"1504","NP33593":"1505","PD10238":"1506","FT57053":"1507","BD10293":"1508","MD10099":"1509","YD10131":"1510","NP33600":"1511","FT57059":"1512","ND10294":"1513","FT57060":"1514","FT57065":"1515","DS10839":"1516","NP33602":"1517","FR10001RA":"1518","PR11329":"1519","PR11330":"1520","PR11331":"1521","FT57068":"1522","NP33603":"1523","FT57070":"1524","NP33604":"1525","FT57071":"1526","FT57072":"1527","NP33606":"1528","NP33607":"1529","NP33605":"1530","NP33609":"1531","FT57076":"1532","FT57074":"1533","NP33608":"1534","DS10841":"1535","FT57078":"1536","FT55103":"1537","FT57170":"1538","FT57175":"1539","NP33661":"1540","NP33665":"1541","FT57182":"1542","FT56016":"1543","NP33668":"1544","NP33669":"1545","NP33670":"1546","FT57187":"1547","PR11341":"1548","FT57191":"1549","FT57193":"1550","FT53035":"1551","NP33667":"1552","FT57196":"1553","PR11346":"1554","PR11347":"1555","NP33671":"1556","PD10239":"1557","FT57199":"1558","FT57200":"1559","NP33674":"1560","FT57202":"1561","FT57201":"1562","NP33676":"1563","PR11352":"1564","PR11353":"1565","PR11354":"1566","PR11356":"1567","FT57207":"1568","PD10146":"1569","FT49990":"1570","FT50071":"1571","FT50253":"1572","FT50311":"1573","FT50364":"1574","FT50371":"1575","FT50503":"1576","PR10876":"1577","FT51444":"1578","FT51447":"1579","FT51453":"1580","FT51454":"1581","BD10253":"1582","PD10186":"1583","ND10254":"1584","FT51486":"1585","FT51510":"1586","FT51515":"1587","PD10187":"1588","BD10242":"1589","FT51629":"1590","FT51686":"1591","FT51712":"1592","FT51755":"1593","FT51781":"1594","FT51826":"1595","FT51829":"1596","FT51906":"1597","FT51914":"1598","FT51954":"1599","FT51965":"1600","FT51968":"1601","FT51992":"1602","FT52042":"1603","NP31384":"1604","FT52087":"1605","NP31391":"1606","FT52152":"1607","FT51383":"1608","FT52208":"1609","FT52322":"1610","FT52412":"1611","FT52345":"1612","FT52473":"1613","SD10034":"1614","FT51748":"1615","FT52631":"1616","NP31603":"1617","NP31629":"1618","PD10203":"1619","NP31650":"1620","FT52838":"1621","FT53099":"1622","FT53106":"1623","NP31808":"1624","NP31810":"1625","FT51574":"1626","FT53186":"1627","NP31846":"1628","FT53315":"1629","FT53339":"1630","FT53567":"1631","FT53596":"1632","NP32018":"1633","FT53671":"1634","NP32021":"1635","NP32031":"1636","FT53718":"1637","FT52687":"1638","PR10966":"1639","NP32092":"1640","NP32125":"1641","FT53959":"1642","NP32147":"1643","FT53966":"1644","FT53967":"1645","FT54014":"1646","FT54040":"1647","FT54045":"1648","FT54048":"1649","FT54052":"1650","FT54070":"1651","FT54088":"1652","FT54121":"1653","FT54138":"1654","NP32451":"1655","NP32457":"1656","FT54700":"1657","FT54708":"1658","NP32481":"1659","NP32493":"1660","NP32494":"1661","ND10282":"1662","FT54834":"1663","FT54835":"1664","FT52248RA":"1665","FT54840":"1666","FT54848":"1667","FT54850":"1668","FT54851":"1669","FT54859":"1670","FT54873":"1671","NP32560":"1672","FT54879":"1673","FT54959":"1674","ND10284":"1675","NP32618":"1676","PR11052":"1677","FT55059":"1678","FT55087":"1679","FT53812":"1680","FT55324":"1681","FT55329":"1682","PD10217":"1683","NP32149":"1684","FT55601":"1685","NP32887":"1686","FT55641":"1687","FT55663":"1688","NP32917":"1689","FT55703":"1690","PR11165":"1691","FT55706":"1692","NP32936":"1693","NP32942":"1694","NP32966":"1695","FT55780":"1696","FT55786":"1697","DS10733":"1698","ND10289":"1699","FT55833":"1700","FT54804":"1701","FT55847":"1702","FT55850":"1703","FT55871":"1704","FT55874":"1705","NP33013":"1706","NP33014":"1707","FT55889":"1708","FT56144":"1709","FT56146":"1710","FT56155":"1711","PR11197":"1712","FT56190":"1713","NP33157":"1714","NP33162":"1715","FT56195":"1716","NP33165":"1717","FT56204":"1718","FT56206":"1719","NP33169":"1720","PR11207":"1721","NP33180":"1722","FT56250":"1723","ND10290":"1724","NP33196":"1725","FT56273":"1726","FT56251":"1727","FT56277":"1728","PR11212":"1729","NP33205":"1730","FT56286":"1731","FT56288":"1732","FT44557-4":"1733","FT56307":"1734","PR11243":"1735","PR11246":"1736","NP33230":"1737","FT56335":"1738","NP33240":"1739","FT56350":"1740","PR11257":"1741","FT56362":"1742","NP33253":"1743","NP33254":"1744","FT56376":"1745","NP33259":"1746","NP33261":"1747","FT56398":"1748","NP33269":"1749","NP33271":"1750","FT56409":"1751","BD10286":"1752","MD10094":"1753","NP33280":"1754","NP33284":"1755","NP33287":"1756","PD10233":"1757","NP33308":"1758","FT56457":"1759","FT56460":"1760","NP33313":"1761","FT56484":"1762","FT50138":"1763","NP33331":"1764","NP33347":"1765","NP33358":"1766","FT56561":"1767","FT56567":"1768","FT56573":"1769","NP33361":"1770","FT56574":"1771","NP33362":"1772","NP33364":"1773","FT56601":"1774","FT56594":"1775","NP33379":"1776","FT56637":"1777","DS10797":"1778","NP33391":"1779","PR11265":"1780","PR11267":"1781","NP33398":"1782","PR11269":"1783","PR11270":"1784","FT56653":"1785","NP33403":"1786","FT56778":"1787","NP33467":"1788","FT56787":"1789","FT56793":"1790","FT56795":"1791","NP33474":"1792","FT56807":"1793","NP33476":"1794","FT56813":"1795","FT56814":"1796","FT56835":"1797","PD10234":"1798","FT56842":"1799","FT56843":"1800","FT56851":"1801","NP33496":"1802","FT56852":"1803","DS10813":"1804","NP33498":"1805","NP33508":"1806","DS10817":"1807","NP33523":"1808","YD10127":"1809","SD10039":"1810","NP33526":"1811","NP33527":"1812","NP33530":"1813","FT56920":"1814","NP33534":"1815","DS10824":"1816","NP33535":"1817","FT56940":"1818","NP33539":"1819","NP33538":"1820","FT56944":"1821","NP33541":"1822","FT56945":"1823","FT56951":"1824","FT56952":"1825","FT56957":"1826","FT43519RA2":"1827","FT57036":"1828","NP33588":"1829","FT57044":"1830","DS10836":"1831","NP33589":"1832","FT57050":"1833","DS10838":"1834","FT57054":"1835","FT57055":"1836","PR11328":"1837","FT57064":"1838","NP33610":"1839","FT57077":"1840","FT57083":"1841","FT57086":"1842","FT57087":"1843","FT57103":"1844","FT57109":"1845","FT57112":"1846","FT57115":"1847","FT57116":"1848","FT57118":"1849","FT57194":"1850","PR11348":"1851","PR11349":"1852","FT57189":"1853","FT57198":"1854","NP33673":"1855","FT57204":"1856","FT57205":"1857","NP33675":"1858","PR11350":"1859","FT57206":"1860","FT37825":"1861","FT42429":"1862","FT43259R":"1863","NP29341":"1864","FT46840":"1865","FT46798":"1866","FT47658":"1867","FT47751":"1868","FT47860":"1869","FT48039":"1870","NP30038":"1871","NP30065":"1872","NP30067":"1873","NP30091":"1874","FT48430":"1875","NP30270":"1876","FT49280":"1877","FT49686":"1878","ND10206":"1879","FT50302":"1880","FT50363":"1881","FT50370":"1882","FT50419":"1883","FT50424":"1884","FT50698":"1885","FT50709":"1886","FT50731":"1887","FT50736":"1888","FT50936":"1889","FT51095":"1890","FT51097":"1891","FT51223":"1892","FT51248":"1893","FT51311":"1894","FT51313":"1895","FT51342":"1896","BD10252":"1897","FT51403":"1898","FT51418":"1899","FT51525":"1900","FT51166":"1901","FT51584":"1902","FT51631":"1903","FT51753":"1904","FT51759":"1905","NP31254":"1906","FT51763":"1907","FT51791":"1908","NP31315":"1909","BD10257":"1910","FT52032":"1911","FT52049":"1912","FT52150":"1913","FT54342":"1914","NP32343":"1915","NP32380":"1916","FT54483":"1917","YD10119":"1918","PR11013":"1919","FT54613":"1920","NP32435":"1921","PR11097":"1922","FT55202":"1923","NP32723":"1924","FT55303":"1925","NP32747":"1926","ND10259":"1927","NP32793":"1928","ND10288":"1929","FT55444":"1930","NP32839":"1931","NP32858":"1932","FT55578":"1933","FD10152":"1934","FT56042":"1935","FT56045":"1936","NP33138":"1937","FT56139":"1938","FT56154":"1939","FT56173":"1940","FT56180":"1941","PR11241":"1942","FT56328":"1943","FT56338":"1944","FT50794":"1945","FT56431":"1946","NP33303":"1947","PR11260":"1948","FT56472":"1949","FT56711":"1950","NP33434":"1951","NP33426":"1952","FT56721":"1953","NP33444":"1954","NP33068":"1955","PR11297":"1956","PR11300":"1957","NP33485":"1958","FT56823":"1959","NP33491":"1960","FT56845":"1961","FT56856":"1962","FT56861":"1963","FT56870":"1964","BD10289":"1965","DS10830":"1966","DS10831":"1967","DS10834":"1968","NP33572":"1969","FT57020":"1970","NP33576":"1971","NP33577":"1972","FT57023":"1973","FT57038":"1974","FT57047":"1975","FT57048":"1976","FT57057":"1977","NP33597":"1978","FT57062":"1979","FT57066":"1980","DS10849":"1981","FT57172":"1982","FT57173":"1983","PR11339":"1984","FT57185":"1985","DS10850":"1986","FT57188":"1987","FT57195":"1988","NP33672":"1989","PR11351":"1990","PR11355":"1991","FT40339RA":"1992","FT40958":"1993","PR10562":"1994","FT45380":"1995","FT45998":"1996","FT47080":"1997","NP29713":"1998","PD10121":"1999","FT48373":"2000","FT48651":"2001","FT45789RA":"2002","NP30400":"2003","FT49599":"2004","FT49605":"2005","NP30761":"2006","FT50515":"2007","FT52180":"2008","FT52293":"2009","FT52306":"2010","FT52490":"2011","FT52600":"2012","FT52729":"2013","FT52762":"2014","FT52891":"2015","FR10026":"2016","FT52919":"2017","FT52966":"2018","FT53108":"2019","FT53114":"2020","FT53365":"2021","FT53120":"2022","FT52239":"2023","FT51058":"2024","FT53540":"2025","FT53604":"2026","FT53668":"2027","FT53683":"2028","FT50700":"2029","FT53789":"2030","NP32081":"2031","FT53829":"2032","FT53839":"2033","FT53862":"2034","FT53923":"2035","FT53961":"2036","FT53968":"2037","NP32160":"2038","FT54054":"2039","NP32197":"2040","FT54085":"2041","FT54086":"2042","NP30990":"2043","NP32224":"2044","FT54282":"2045","FT54288":"2046","NP32294":"2047","NP32300":"2048","PR10991":"2049","FT54658":"2050","FT54692":"2051","FT54693":"2052","FT54709":"2053","FT54737":"2054","PD10211":"2055","NP32515":"2056","FT54884":"2057","FT54960":"2058","FT54978":"2059","FT54997":"2060","NP32611":"2061","FT55065":"2062","FT55072":"2063","FD10148":"2064","NP32662":"2065","FT55339":"2066","FT55704":"2067","PR11164":"2068","NP32954":"2069","FT55757":"2070","FT55789":"2071","FT55819":"2072","NP32987":"2073","NP32998":"2074","FT55893":"2075","FT55907":"2076","FT55919":"2077","NP33037":"2078","FT55957":"2079","NP33064":"2080","NP33065":"2081","FT55997":"2082","FT56009":"2083","FT56194":"2084","FT56202":"2085","FT56214":"2086","NP33174":"2087","FT56233":"2088","NP33179":"2089","FT56279":"2090","FT56289":"2091","FT55951":"2092","FT56319":"2093","FD10154":"2094","FT56564":"2095","FT56568":"2096","FT56599":"2097","FT56605":"2098","FT56623":"2099","NP33383":"2100","FT51807":"2101","FT56640":"2102","PR11266":"2103","FT56649":"2104","FT56657":"2105","PR11281":"2106","NP33509":"2107","FT56880":"2108","PR11304":"2109","FT56883":"2110","FT56885":"2111","FT56890":"2112","FT56898":"2113","NP33517":"2114","NP33529":"2115","FT56909":"2116","FT56912":"2117","FT56922":"2118","NP33533":"2119","FT56934":"2120","PR11312":"2121","FT56955":"2122","FT56976":"2123","FT57085":"2124","FT56177":"2125","FT57093":"2126","FT57095":"2127","FT57097":"2128","FT57104":"2129","NP33625":"2130","FT57121":"2131","NP33631":"2132","FT57133":"2133","NP33636":"2134","FT57147":"2135","FT56872":"2136","DS10845":"2137","FT57152":"2138","FT57160":"2139","PR11338":"2140","FT50631":"2141","ND10234":"2142","NP30935":"2143","FT50904":"2144","FT50927":"2145","FT50933":"2146","NP30994":"2147","FT51228":"2148","FT51312":"2149","NP30954":"2150","FT51473":"2151","SD10031":"2152","FT51602":"2153","FT51609":"2154","FT51611":"2155","FT51626":"2156","FT51728":"2157","FT51773":"2158","ND10258":"2159","NP31275":"2160","NP31307":"2161","PD10195":"2162","FT51348":"2163","FT51395":"2164","NP31120":"2165","FT51420":"2166","FT51452":"2167","FT51467":"2168","SD10032":"2169","FT51725":"2170","FT51806":"2171","FT51973":"2172","FT51981":"2173","FT52149":"2174","FT52214":"2175","FT52288":"2176","FT52626":"2177","FT52645":"2178","NP31589":"2179","FT52806":"2180","FT52826":"2181","FT52884":"2182","FT52917":"2183","NP31719":"2184","FT53359":"2185","FT53442":"2186","FT53577":"2187","NP32012":"2188","FT53740":"2189","FT53764":"2190","DS10567":"2191","BD10272":"2192","FT53849":"2193","FT53957":"2194","NP32190":"2195","NP32189":"2196","FT54077":"2197","FT54103":"2198","FT54134":"2199","FT54137":"2200","FT54139":"2201","FT54694":"2202","FT54695":"2203","FT52347":"2204","NP31203":"2205","FT54736":"2206","FT54738":"2207","MD10090":"2208","FT54831":"2209","NP32548":"2210","FT54867":"2211","NP32525":"2212","FT52088":"2213","NP32568":"2214","NP32569":"2215","FT54945":"2216","NP32601":"2217","PR11050":"2218","FT55724":"2219","NP32795":"2220","FT55770":"2221","FT55811":"2222","FT55826":"2223","FT55868":"2224","NP33012":"2225","NP33030":"2226","FT55923":"2227","FT55942":"2228","NP32782":"2229","FT55965":"2230","NP33054":"2231","FT55974":"2232","FT56007":"2233","NP33135":"2234","FT56147":"2235","FT56140":"2236","FT56168":"2237","FT56176":"2238","NP33161":"2239","FT56236":"2240","PD10227":"2241","NP33206":"2242","FT56303":"2243","FT56316":"2244","FT56343":"2245","NP33247":"2246","NP33151":"2247","NP33267":"2248","FT56399":"2249","ND10292":"2250","FT56465":"2251","FT56468":"2252","FT56527":"2253","FT56536":"2254","FT56576":"2255","FT56593":"2256","NP33370":"2257","NP33367":"2258","FT56622":"2259","FT56629":"2260","FT54093":"2261","FT56642":"2262","FT56645":"2263","FT56650":"2264","FT56786":"2265","FT56796":"2266","FT56800":"2267","FT56808":"2268","NP33479":"2269","FT56818":"2270","PR11301":"2271","FT56841":"2272","FT56853":"2273","FT56854":"2274","FT56859":"2275","FT56889":"2276","FT56894":"2277","FT56904":"2278","FT56910":"2279","FT56928":"2280","FT56942":"2281","FT57043":"2282","DS10835":"2283","FT57045":"2284","NP33591":"2285","NP33598":"2286","NP33599":"2287","FT57061":"2288","NP33276":"2289","DS10840":"2290","FT57073":"2291","FT57075":"2292","FT56911":"2293","FT57094":"2294","FT57102":"2295","NP33620":"2296","FT57119":"2297","FT57120":"2298","NP33634":"2299","FT57136":"2300","FT57197":"2301","FT57203":"2302","1067824006":"2304","SO0008580-1":"2305","ZLD73590":"2307","7391028810":"2308","20538659":"2310","1067828956/ 1067828955":"2311","20538594":"2314","2755065531":"2315","1067833158":"2317","ML83690":"2318","1067834378/ 1067834333":"2320","ML83730":"2321","ML83850":"2325"};
-
-let poMapping = {};
-
-function updatePoMapBadge() {
-  const count = Object.keys(poMapping).length;
-  const badge = document.getElementById('poMapBadge');
-  if (!badge) return;
-  badge.textContent = count > 0 ? count.toLocaleString() + ' PO mappings active' : 'No mapping loaded';
-  badge.style.color = count > 0 ? 'var(--green)' : 'var(--text3)';
-}
-
-async function loadPOMapFile(inp) {
-  const file = inp.files[0]; if (!file) return;
-  setZoneFile('poMapZone', 'poMapZoneLabel', file.name);
-  try {
-    const buf = await readFileArrayBuffer(file);
-    const wb = XLSX.read(buf, {type:'array'});
-    const sheetName = wb.SheetNames.find(s => s.toLowerCase().includes('source')) || wb.SheetNames[0];
-    const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], {defval:'', raw:true});
-    const newMap = {};
-    rows.forEach(row => {
-      const newPO = String(row['Purchase Order'] || '').trim();
-      const oldPO = String(row['CustomerPO'] || '').trim().toUpperCase();
-      if (oldPO && newPO && oldPO !== 'NONE' && oldPO !== '') newMap[oldPO] = newPO;
-    });
-    poMapping = newMap;
-    lsSet(LS_PO, poMapping);
-    setSynced();
-    updatePoMapBadge();
-    const st = document.getElementById('poMapStatus');
-    st.style.display = 'flex';
-    st.innerHTML = '<div class="dot dot-ok"></div><span>✓ ' + Object.keys(newMap).length + ' PO mappings saved</span>';
-    toast(Object.keys(newMap).length + ' PO mappings loaded');
-  } catch(e) { toast('Error: ' + e.message, 'error'); }
-}
-
-function lookupPO() {
-  const input = document.getElementById('poLookupInput').value.trim().toUpperCase();
-  const result = document.getElementById('poLookupResult');
-  if (!input) return;
-  const exact = poMapping[input];
-  if (exact) {
-    result.innerHTML = '<span style="color:var(--green)">Old PO <strong>' + input + '</strong> → New PO <strong style="font-size:15px;color:var(--accent)">' + exact + '</strong></span>';
-    return;
-  }
-  const matches = Object.entries(poMapping).filter(([k]) => k.includes(input)).slice(0, 5);
-  if (matches.length) {
-    result.innerHTML = matches.map(([o,n]) => '<div style="margin-bottom:4px"><span style="color:var(--text2)">' + o + '</span> → <span style="color:var(--accent)">' + n + '</span></div>').join('');
-  } else {
-    result.innerHTML = '<span style="color:var(--red)">No match for "' + input + '"</span>';
-  }
-}
-
-function extractOldPOs(val) {
-  const matches = String(val||'').match(/\b(FT\d{4,}|PR\d{4,}|NP\d{4,}|DR\d{4,}|BD\d{4,}|ND\d{4,}|FR\d{4,}|DS\d{4,}|YD\d{4,}|SD\d{4,}|PD\d{4,}|MD\d{4,}|FD\d{4,})\b/gi);
-  return matches ? matches.map(m => m.toUpperCase()) : [];
-}
-
-function buildModelPOMap(wb) {
-  const modelPOMap = {};
-  wb.SheetNames.forEach(sheetName => {
-    const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], {defval:'', raw:true});
-    rows.forEach(row => {
-      const model = cleanModel(row['Model']||row['Item']||row['Material']||row['Product #']||row['MATERIAL']||'');
-      if (!model) return;
-      Object.values(row).forEach(val => {
-        extractOldPOs(val).forEach(oldPO => {
-          const newPO = poMapping[oldPO];
-          if (newPO && !modelPOMap[model]) modelPOMap[model] = {oldPO, newPO};
-        });
-      });
-    });
-  });
-  return modelPOMap;
+  return map;
 }
 
 function runEtaProcess(){
   if(!selectedVendor){toast('Select a vendor','error');return;}
   if(!etaVendorData){toast('Upload vendor report','error');return;}
   if(!etaHSRows.length){toast('Upload Homesource CSV','error');return;}
-  const {etaMap, poModelMap} = parseVendorData();
-  const modelCount = Object.keys(poModelMap).length + Object.keys(etaMap).length;
-  const cols = Object.keys(etaHSRows[0]||{});
-  const modelCol  = cols.find(c=>/model/i.test(c)) || cols[0];
-  const poCol     = cols.find(c=>/^po.?num|^po.?numb|^purchase.?order/i.test(c));
-  const custPOCol = cols.find(c=>/customer.?po|customerpo/i.test(c));
-  let etaMatched=0, poMatched=0;
-  const updated = etaHSRows.map(row => {
-    const model = cleanModel(row[modelCol]);
-    const hsPO = String(row[poCol] || '').trim();
-    const poKey = hsPO + '::' + model;
-    // PO+model match first, fall back to model-only
-    const vendorETA = poModelMap[poKey] || (!hsPO ? etaMap[model] : null) || etaMap[model];
-    const newRow = Object.assign({}, row);
-    newRow['UPDATED_ETA'] = vendorETA ? fmtDate(addDays(vendorETA,7)) : '';
-    if (vendorETA) etaMatched++;
-    // Translate old PO directly from Homesource Customer PO column
-    const custPO = String(row[custPOCol] || '').trim().toUpperCase();
-    if (custPO && poMapping[custPO]) {
-      newRow['OLD_PO'] = custPO;
-      newRow['NEW_PO'] = poMapping[custPO];
-      poMatched++;
-    } else if (custPO && /^[A-Z]{2}/i.test(custPO)) {
-      // Old-style PO not yet in mapping
-      newRow['OLD_PO'] = custPO;
-      newRow['NEW_PO'] = 'NOT IN MAPPING';
+
+  const etaMap=parseVendorData();
+  const modelCount=Object.keys(etaMap).length;
+  toast('Found '+modelCount+' ETAs in vendor report');
+
+  // Convert customer POs to HS PO numbers
+  const poCol = cols.find(c => /customer.?po|cust.?po|po.?number|po.?num|order.?num/i.test(c));
+  const hsPOCol = cols.find(c => /^po$|hs.?po|homesource.?po/i.test(c));
+
+  // Detect model column in Homesource CSV
+  const cols=Object.keys(etaHSRows[0]||{});
+  const modelCol=cols.find(c=>/model/i.test(c))||cols[0];
+  const etaCol=cols.find(c=>/eta|ship date|delivery|est/i.test(c))||null;
+
+  let matched=0, poConverted=0;
+  const updated=etaHSRows.map(row=>{
+    // Step 0: Convert letter-prefix PO to numeric HS PO if needed
+    if(poCol && row[poCol]) {
+      const rawPO = String(row[poCol]).trim();
+      if(/^[A-Za-z]{2}/i.test(rawPO) && PO_CONVERSION[rawPO]) {
+        row = Object.assign({}, row);
+        row[poCol] = String(PO_CONVERSION[rawPO]);
+        poConverted++;
+      }
+    }
+    const model=cleanModel(row[modelCol]);
+    const vendorETA=etaMap[model];
+    const newRow=Object.assign({},row);
+    if(vendorETA){
+      const finalETA=addDays(vendorETA,7);
+      newRow['UPDATED_ETA']=fmtDate(finalETA);
+      matched++;
     } else {
-      newRow['OLD_PO'] = '';
-      newRow['NEW_PO'] = '';
+      newRow['UPDATED_ETA']='';
     }
     return newRow;
   });
-  const st=document.getElementById('etaMatchStatus'); st.style.display='flex';
-  st.innerHTML='<div class="dot '+(etaMatched>0?'dot-ok':'dot-warn')+'"></div><span>'+etaMatched+' ETA matches (PO+model) · '+poMatched+' PO translations · '+Object.keys(poModelMap).length+' vendor entries</span>';
-  const links=document.getElementById('etaExportLinks'); links.innerHTML='';
-  const CHUNK=100, date=new Date().toISOString().slice(0,10), vendor=selectedVendor.name.replace(/\s+/g,'');
+
+  const st=document.getElementById('etaMatchStatus');
+  st.style.display='flex';
+  st.innerHTML='<div class="dot '+(matched>0?'dot-ok':'dot-warn')+'"></div>'+
+    '<span>'+matched+' of '+etaHSRows.length+' rows matched · '+modelCount+' ETAs from vendor</span>';
+
+  // Chunk and export
+  const links=document.getElementById('etaExportLinks');
+  links.innerHTML='';
+  const CHUNK=100;
+  const date=new Date().toISOString().slice(0,10);
+  const vendor=selectedVendor.name.replace(/\s+/g,'');
   for(let i=0;i<updated.length;i+=CHUNK){
-    const chunk=updated.slice(i,i+CHUNK), partNum=Math.floor(i/CHUNK)+1;
+    const chunk=updated.slice(i,i+CHUNK);
+    const partNum=Math.floor(i/CHUNK)+1;
     const fname=vendor+'_ETA_'+date+'_part'+partNum+'.csv';
     const headers=Object.keys(chunk[0]||{});
-    const csvContent=[headers.join(','),...chunk.map(r=>headers.map(h=>{const v=r[h]||'';return '"'+String(v).replace(/"/g,'""')+'"';}).join(','))].join('\n');
-    const btn=document.createElement('button'); btn.className='btn btn-primary';
+    const csvContent=[
+      headers.join(','),
+      ...chunk.map(r=>headers.map(h=>{const v=r[h]||'';return '"'+String(v).replace(/"/g,'""')+'"';}).join(','))
+    ].join('\n');
+    const btn=document.createElement('button');
+    btn.className='btn btn-primary';
     btn.textContent='↓ '+fname+' ('+chunk.length+' rows)';
     btn.onclick=(()=>{const f=fname,c=csvContent;return()=>downloadBlob(f,c,'text/csv');})();
     links.appendChild(btn);
   }
-  toast('Ready — '+updated.length+' rows in '+Math.ceil(updated.length/CHUNK)+' file(s)');
+  toast('Ready to export '+updated.length+' rows in '+Math.ceil(updated.length/CHUNK)+' file(s)');
 }
 
-function init(){
-  try { pricingRules = lsGet(LS_PRICING, {}); } catch(e) { pricingRules = {}; }
-  try { spiffBrands = lsGet(LS_SPIFF, null) || JSON.parse(JSON.stringify(DEFAULT_SPIFF_BRANDS)); } catch(e) { spiffBrands = []; }
-  try { poMapping = lsGet(LS_PO, null) || DEFAULT_PO_MAPPING; } catch(e) { poMapping = DEFAULT_PO_MAPPING; }
-  try { setSynced(); } catch(e){}
-  try { refreshPricingBrandSelects(); } catch(e){}
-  try { buildVendorGrid(); } catch(e){ console.error('buildVendorGrid failed:', e); }
-  try { updatePoMapBadge(); } catch(e){}
-}
-
-// Belt and suspenders: also build vendor grid after DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-  if (!document.querySelector('#vendorGrid .vendor-card')) buildVendorGrid();
-});
-
-init();
+// ══════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════
+(function init(){
+  // Load SPIFF brands
+  spiffBrands=loadSpiffBrands()||JSON.parse(JSON.stringify(DEFAULT_SPIFF_BRANDS));
+  // Load pricing brands
+  refreshPricingBrandSelects();
+  // Build vendor grid
+  buildVendorGrid();
+  // Upload zone drag support
+  ['pricingZone','spiffZone','etaVendorZone','etaHSZone'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){
+      el.addEventListener('dragover',e=>{e.preventDefault();el.classList.add('drag-over');});
+      el.addEventListener('dragleave',()=>el.classList.remove('drag-over'));
+    }
+  });
+})();
 </script>
 </body>
 </html>
